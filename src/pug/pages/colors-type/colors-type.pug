@@ -1,0 +1,25 @@
+extends ../../layout/ui-kit
+
+
+include ../../utils/color/color
+include ../../utils/logo-ui-kit/logo-ui-kit
+
+block variables
+  - var pageTitle = 'Colors & Type';
+  - var pageDescription = 'Colors & Type. Task 2';
+  //- - var pageClass = 'index-page';
+
+block content
+  .ui-kit__logo-wrapper
+    +logoimg()
+  .ui-kit__container
+    section.container__colors
+      +color({ namecolor: 'Dark Shade 100%', hexcolor: '#1F2041', num: 100 })
+      +color({ namecolor: 'Dark Shade 75%', hexcolor: '#1F2041', num: 75 })
+      +color({ namecolor: 'Dark Shade 50%', hexcolor: '#1F2041', num: 50 })
+      +color({ namecolor: 'Dark Shade 25%', hexcolor: '#1F2041', num: 25 })
+      +color({ namecolor: 'Dark Shade 5%', hexcolor: '#1F2041', num: 5 })
+      +color({ namecolor: 'Purple', hexcolor: '#1F2041' })
+      +color({ namecolor: 'Green', hexcolor: '#1F2041' })
+
+    section.container__heading

@@ -7,41 +7,40 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  public: 'public/'
+  public: './',
 };
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => {
-  fileName.endsWith('.pug');
-});
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
   entry: {
     app: PATHS.src
   },
   output: {
     filename: `${PATHS.public}js/[name].[hash].js`,
-    path: PATHS.dist
+    path: PATHS.dist,
   },
   module: {
-    pules: [
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader'
+        loader: 'pug-loader',
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
+        exclude: [/fonts/, /static/],
         options: {
-          name: '[name].[ext]'
+          name: `${PATHS.public}img/[name].[ext]`,
         }
       },
       {
@@ -49,7 +48,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          emitFile: false
+          emitFile: false,
         }
       },
       {
@@ -61,53 +60,60 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              esModule: true
-            }
+              esModule: true,
+            },
           },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
-            loader: 'postcss-loader'
+            loader: 'postcss-loader',
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
+              sourceMap: true,
+            },
+          },
         ]
       },
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.public}css/[name].[hash].css`
+      filename: `${PATHS.public}css/[name].[hash].css`,
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: `${PATHS.src}/img`,
-          to: `${PATHS.public}img`
+          from: `${PATHS.src}/pug/utils/logo-ui-kit/img`,
+          to: 'img'
         },
-        {
-          from: `${PATHS.src}/fonts`,
-          to: `${PATHS.public}fonts`
-        },
+    //     // {
+    //     //   from: `${PATHS.src}/fonts`,
+    //     //   to: `${PATHS.public}fonts`
         {
           from: `${PATHS.src}/static`,
           to: ''
-        }
+        },
       ]
     }),
-    ...PAGES.map(page => {
-      new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${page}`,
-        filename: `./${page.replace(/\.pug/,'.html')}`
-      })
-    })
+    // ...PAGES.map(page => new HtmlWebpackPlugin({
+    //   template: `${PAGES_DIR}/${page}`,
+    //   filename: `./${page.replace(/\.pug/,'.html')}`
+    // })),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}colors-type/colors-type.pug`,
+      filename: './colors-type.html',
+    }),
   ]
 };
+
+// module.exports = (env, argv) => {
+//   (argv.mode === 'production') ? 'source/' : 'public/'
+
+//   return /* baseConfig object */
+// }
