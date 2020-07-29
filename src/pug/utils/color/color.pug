@@ -1,6 +1,6 @@
-mixin color ({namecolor, hexcolor, num} = {})
+mixin color ({namecolor, hexcolor, value} = {})
   .colors-item
-    div(class= 'colors-item__cell colors-item__cell--' + num)
+    div(class= 'colors-item__cell colors-item__cell--' + value)
     .colors-item__info
       p.info__namecolor= namecolor
       p.info__hexcolor= hexcolor
