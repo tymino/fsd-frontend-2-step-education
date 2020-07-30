@@ -1,0 +1,15 @@
+mixin heading ({typetag, text} = {})
+  .heading-item
+    case typetag
+      when 1
+        .heading-item__label.heading-text--h1.heading-text--style-normal H1
+        .heading-item__text.heading-text--h1.heading-text--style-bold= text
+      when 2
+        .heading-item__label.heading-item__label--h2 H2
+        .heading-item__text.heading-item__label--h2= text
+      when 3
+        .heading-item__label.heading-text--h3 H3
+        .heading-item__text.heading-text--h3= text
+      default
+        .heading-item__label.heading-item__label--body Body
+        .heading-item__text.heading-item__label--body= text

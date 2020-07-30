@@ -3,6 +3,7 @@ extends ../../layout/ui-kit
 
 include ../../utils/color/color
 include ../../utils/logo-ui-kit/logo-ui-kit
+include ../../utils/heading/heading
 
 block variables
   - var pageTitle = 'Colors & Type';
@@ -14,12 +15,16 @@ block content
     +logoimg()
   .ui-kit__container
     section.container__colors
-      +color({ namecolor: 'Dark Shade 100%', hexcolor: '#1F2041', value: 100 })
-      +color({ namecolor: 'Dark Shade 75%', hexcolor: '#1F2041', value: 75 })
-      +color({ namecolor: 'Dark Shade 50%', hexcolor: '#1F2041', value: 50 })
-      +color({ namecolor: 'Dark Shade 25%', hexcolor: '#1F2041', value: 25 })
-      +color({ namecolor: 'Dark Shade 5%', hexcolor: '#1F2041', value: 5 })
+      +color({ namecolor: 'Dark Shade 100%', hexcolor: '#1F2041', value: 'darkshade100' })
+      +color({ namecolor: 'Dark Shade 75%', hexcolor: '#1F2041', value: 'darkshade75' })
+      +color({ namecolor: 'Dark Shade 50%', hexcolor: '#1F2041', value: 'darkshade50' })
+      +color({ namecolor: 'Dark Shade 25%', hexcolor: '#1F2041', value: 'darkshade25' })
+      +color({ namecolor: 'Dark Shade 5%', hexcolor: '#1F2041', value: 'darkshade5' })
       +color({ namecolor: 'Purple', hexcolor: '#1F2041', value: 'purple' })
       +color({ namecolor: 'Green', hexcolor: '#1F2041', value: 'green' })
 
     section.container__heading
+      +heading({typetag: 1, text: 'This one is the sub-section or widget title'})
+      +heading({typetag: 2, text: 'Next one is the item title inside widgets'})
+      +heading({typetag: 3, text: 'This is a label or CTA text'})
+      +heading({typetag: -1, text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'})
