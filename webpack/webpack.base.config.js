@@ -44,10 +44,10 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
+          name: '../fonts/[name].[ext]',
           emitFile: false,
         }
       },
