@@ -1,6 +1,6 @@
 mixin color ({namecolor, hexcolor, value} = {})
   .colors-item
-    div(class= `colors-item__cell modf__color--${value}`)
+    div(class= `colors-item__cell colors-item__cell--${value}`)
     .colors-item__info
-      p.info__namecolor.modf__font-family--quicksand.modf__font-weight--bold= namecolor
+      p.info__namecolor.modf__font-family--quicksand.modf__font-weight--bold.modf__text--h2= namecolor
       p.info__hexcolor.modf__font-family--quicksand= hexcolor

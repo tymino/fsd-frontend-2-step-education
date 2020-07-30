@@ -2,14 +2,14 @@ mixin heading ({typetag, text} = {})
   .heading-item
     case typetag
       when 1
-        .heading-item__label.heading-text--h1.heading-text--style-normal H1
-        .heading-item__text.heading-text--h1.heading-text--style-bold= text
+        .heading-item__label.modf__font-family--open-sans.modf__text--h1.modf__color--darkshade25 H1
+        .heading-item__text.modf__font-family--quicksand.modf__font-weight--bold.modf__color--darkshade100.modf__text--h1= text
       when 2
-        .heading-item__label.heading-item__label--h2 H2
-        .heading-item__text.heading-item__label--h2= text
+        .heading-item__label.modf__font-family--open-sans.modf__text--h2.modf__color--darkshade25 H2
+        .heading-item__text.modf__font-family--quicksand.modf__font-weight--bold.modf__color--darkshade100.modf__text--h2= text
       when 3
-        .heading-item__label.heading-text--h3 H3
-        .heading-item__text.heading-text--h3= text
+        .heading-item__label.modf__font-family--open-sans.modf__text--h3.modf__color--darkshade25 H3
+        .heading-item__text.modf__font-family--open-sans.modf__font-weight--bold.modf__text--h3.modf__color--darkshade100= text
       default
-        .heading-item__label.heading-item__label--body Body
-        .heading-item__text.heading-item__label--body= text
+        .heading-item__label.modf__font-family--open-sans.modf__text--body.modf__color--darkshade25 Body
+        .heading-item__text.modf__font-family--open-sans.modf__font-weight--normal.modf__text--body.modf__color--darkshade75= text
