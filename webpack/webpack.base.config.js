@@ -92,9 +92,10 @@ module.exports = {
           from: `${PATHS.src}/pug/utils/logo-ui-kit/img`,
           to: 'img'
         },
-    //     // {
-    //     //   from: `${PATHS.src}/fonts`,
-    //     //   to: `${PATHS.public}fonts`
+        {
+          from: `${PATHS.src}/fonts`,
+          to: `${PATHS.public}fonts`
+        },
         {
           from: `${PATHS.src}/static`,
           to: ''
