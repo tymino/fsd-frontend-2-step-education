@@ -110,6 +110,10 @@ module.exports = {
       template: `${PAGES_DIR}colors-type/colors-type.pug`,
       filename: './colors-type.html',
     }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}form-elements/form-elements.pug`,
+      filename: './form-elements.html',
+    }),
   ]
 };
 
