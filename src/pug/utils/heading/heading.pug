@@ -1,13 +1,13 @@
 mixin heading ({typetag, text, classmodify} = {})
   case typetag
     when 1
-      div(class=`heading-item__label ${classmodify}`)= text
+      div(class=`${classmodify}`)= text
     when 2
-      div(class=`heading-item__label ${classmodify}`)= text
+      div(class=`${classmodify}`)= text
     when 3
-      div(class=`heading-item__label ${classmodify}`)= text
+      div(class=`${classmodify}`)= text
     default
-      div(class=`heading-item__label ${classmodify}`)= text
+      div(class=`${classmodify}`)= text
     
     //- case typetag
     //-   when 1
