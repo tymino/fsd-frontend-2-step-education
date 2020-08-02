@@ -1,15 +1,24 @@
-mixin heading ({typetag, text} = {})
-  .heading-item
-    case typetag
-      when 1
-        .heading-item__label.modf__font-family--open-sans.modf__text--h1.modf__color--darkshade25 H1
-        .heading-item__text.modf__font-family--quicksand.modf__font-weight--bold.modf__color--darkshade100.modf__text--h1= text
-      when 2
-        .heading-item__label.modf__font-family--open-sans.modf__text--h2.modf__color--darkshade25 H2
-        .heading-item__text.modf__font-family--quicksand.modf__font-weight--bold.modf__color--darkshade100.modf__text--h2= text
-      when 3
-        .heading-item__label.modf__font-family--open-sans.modf__text--h3.modf__color--darkshade25 H3
-        .heading-item__text.modf__font-family--open-sans.modf__font-weight--bold.modf__text--h3.modf__color--darkshade100= text
-      default
-        .heading-item__label.modf__font-family--open-sans.modf__text--body.modf__color--darkshade25 Body
-        .heading-item__text.modf__font-family--open-sans.modf__font-weight--normal.modf__text--body.modf__color--darkshade75= text
+mixin heading ({typetag, text, classmodify} = {})
+  case typetag
+    when 1
+      div(class=`heading-item__label ${classmodify}`)= text
+    when 2
+      div(class=`heading-item__label ${classmodify}`)= text
+    when 3
+      div(class=`heading-item__label ${classmodify}`)= text
+    default
+      div(class=`heading-item__label ${classmodify}`)= text
+    
+    //- case typetag
+    //-   when 1
+    //-     .heading-item__label.modf__font-family--open-sans.modf__text--h1.modf__color--darkshade25 H1
+    //-     .heading-item__text.modf__font-family--quicksand.modf__font-weight--bold.modf__color--darkshade100.modf__text--h1= text
+    //-   when 2
+    //-     .heading-item__label.modf__font-family--open-sans.modf__text--h2.modf__color--darkshade25 H2
+    //-     .heading-item__text.modf__font-family--quicksand.modf__font-weight--bold.modf__color--darkshade100.modf__text--h2= text
+    //-   when 3
+    //-     .heading-item__label.modf__font-family--open-sans.modf__text--h3.modf__color--darkshade25 H3
+    //-     .heading-item__text.modf__font-family--open-sans.modf__font-weight--bold.modf__text--h3.modf__color--darkshade100= text
+    //-   default
+    //-     .heading-item__label.modf__font-family--open-sans.modf__text--body.modf__color--darkshade25 Body
+    //-     .heading-item__text.modf__font-family--open-sans.modf__font-weight--normal.modf__text--body.modf__color--darkshade75= text

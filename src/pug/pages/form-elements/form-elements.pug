@@ -1,6 +1,7 @@
 extends ../../layout/ui-kit
 
 include ../../utils/logo-ui-kit/logo-ui-kit
+include ../../utils/textinput/textinput
 
 
 block variables
@@ -12,6 +13,13 @@ block content
     +logoimg()
   .ui-kit__container
     section.container__column1
-      
+      +textinput({
+        classname: 'email',
+        type: 'email',
+        name: 'email',
+        placeholder: 'Email',
+        istitle: true,
+        texttitle: 'Text Field'
+      })
     section.container__column2
     section.container__column3
