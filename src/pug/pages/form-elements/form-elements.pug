@@ -2,6 +2,7 @@ extends ../../layout/ui-kit
 
 include ../../utils/logo-ui-kit/logo-ui-kit
 include ../../utils/textinput/textinput
+include ../../utils/dropdown-guests/dropdown-guests
 
 
 block variables
@@ -14,12 +15,32 @@ block content
   .ui-kit__container
     section.container__column1
       +textinput({
-        classname: 'email',
         type: 'email',
         name: 'email',
         placeholder: 'Email',
         istitle: true,
         texttitle: 'Text Field'
+      })
+      +dropdownguests({
+        type: 'text',
+        name: 'text',
+        placeholder: 'Сколько гостей',
+        istitle: true,
+        texttitle: 'Dropdown'
+      })
+      +textinput({
+        type: 'date',
+        name: 'date',
+        placeholder: 'ДД.ММ.ГГГГ',
+        istitle: true,
+        texttitle: 'masked text field'
+      })
+      +textinput({
+        type: 'month',
+        name: 'datetime',
+        placeholder: 'Email',
+        istitle: true,
+        texttitle: 'subscription text field'
       })
     section.container__column2
     section.container__column3

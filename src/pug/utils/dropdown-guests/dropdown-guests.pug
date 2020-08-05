@@ -1,9 +1,9 @@
 include ../heading/heading
 
-mixin textinput({type = 'text', name, placeholder, istitle = false, texttitle} = {})
-  .column1__text-input.text-input.text-input--margin-top
+mixin dropdownguests({type = 'text', name, placeholder, istitle = false, texttitle} = {})
+  .column1__dropdown-guests.dropdown-guests.dropdown-guests--margin-top
     if istitle
-      +heading({typetag: 3, text: texttitle, classmodify: 'text-input__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
+      +heading({typetag: 3, text: `${texttitle}`, classmodify: 'text-input__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
       input(
         class=`text-input__input js-text-input__input-${type} modf__font-family--open-sans modf__font-weight--normal`
         type=type,
