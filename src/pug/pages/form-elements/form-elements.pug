@@ -2,7 +2,11 @@ extends ../../layout/ui-kit
 
 include ../../utils/logo-ui-kit/logo-ui-kit
 include ../../utils/textinput/textinput
-include ../../utils/dropdown-guests/dropdown-guests
+include ../../utils/dropdown/dropdown
+
+//- include ../../utils/text-field/text-field.pug
+include ../../utils/datedropdown/filter-date/filter-date
+
 
 
 block variables
@@ -21,17 +25,19 @@ block content
         istitle: true,
         texttitle: 'Text Field'
       })
-      +dropdownguests({
+      +dropdown({
         type: 'text',
         name: 'text',
         placeholder: 'Сколько гостей',
         istitle: true,
         texttitle: 'Dropdown'
       })
+      +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
+      +filter-date({ firstHeader: 'filter date dropdown', })
       +textinput({
         type: 'date',
         name: 'date',
-        placeholder: 'ДД.ММ.ГГГГ',
+        placeholder: 'дд.мм.гггг',
         istitle: true,
         texttitle: 'masked text field'
       })

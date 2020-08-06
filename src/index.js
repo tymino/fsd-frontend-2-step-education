@@ -1,9 +1,8 @@
 import './sass/main.sass';
 
-// function importFiles(resolve) {
-//   resolve.keys().forEach(resolve);
-// }
-
+function importFiles(resolve) {
+  resolve.keys().forEach(resolve);
+}
 
 // importFiles(require.context('./images', true, /\.(jpg|svg|png)$/));
 // importFiles(require.context('./pug', true, /\.(sass|jpg|png|svg)$/));
@@ -12,4 +11,4 @@ import './sass/main.sass';
 // importFiles(require.context('./static', true, /\.(svg|png|ico|xml|json)$/));
 // // importFiles(require.context('./pages', true, /\.(css|scss)$/));
 
-// importFiles(require.context('./', true, /\.(js)$/));
+importFiles(require.context('./pug/utils', true, /\.(js)$/));
