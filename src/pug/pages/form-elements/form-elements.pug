@@ -32,8 +32,6 @@ block content
         istitle: true,
         texttitle: 'Dropdown'
       })
-      +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
-      +filter-date({ firstHeader: 'filter date dropdown', })
       +textinput({
         type: 'date',
         name: 'date',
@@ -41,12 +39,14 @@ block content
         istitle: true,
         texttitle: 'masked text field'
       })
-      +textinput({
-        type: 'month',
-        name: 'datetime',
-        placeholder: 'Email',
-        istitle: true,
-        texttitle: 'subscription text field'
-      })
+      +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
+      +filter-date({ firstHeader: 'filter date dropdown', })
+      //- +textinput({
+      //-   type: 'month',
+      //-   name: 'datetime',
+      //-   placeholder: 'Email arrow_forward',
+      //-   istitle: true,
+      //-   texttitle: 'subscription text field'
+      //- })
     section.container__column2
     section.container__column3

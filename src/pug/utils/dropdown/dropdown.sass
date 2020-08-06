@@ -1,10 +1,11 @@
 .column1__dropdown
 .dropdown
+  position: relative
 
 .dropdown--margin-top
   margin-top: 20px
 
-.text-input__input
+.dropdown__input
   width: 320px
   height: 44px
   background: #FFFFFF
@@ -24,3 +25,17 @@
     outline: none
     border: 1px solid $darkshade50
     color: $darkshade75
+
+.dropdown__arrow-down
+  position: absolute
+  top: 25px
+  left: 90%
+  color: $darkshade50
+
+  cursor: pointer
+
+.dropdown__drop-menu
+  width: 320px
+  background: #FFFFFF
+  border: 1px solid $darkshade25
+  box-sizing: border-box
