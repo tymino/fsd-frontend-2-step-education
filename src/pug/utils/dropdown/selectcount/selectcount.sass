@@ -2,7 +2,7 @@
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 4px
+  padding: 4px 10px
 
 .selectcount__wrapper
   display: flex
@@ -10,6 +10,9 @@
 
 .selectcount__count
   padding: 0 10px
+  width: 8px
+  text-align: center
+  
 
 .selectcount__btn
   height: 30px
@@ -21,3 +24,36 @@
 
   &:focus
     outline: none
+
+
+.selectcount__btn-container
+  display: flex
+  justify-content: space-between
+  padding: 10px
+
+.selectcount__btn-reset
+  border: none
+  background: none
+  outline: none
+  color: $darkshade50
+  text-transform: uppercase
+  font-family: $fontsans
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
+
+.selectcount__btn-apply
+  border: none
+  background: none
+  outline: none
+  color: $purple
+  text-transform: uppercase
+  font-family: $fontsans
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
+
+.selectcount__btn--visibility
+  visibility: hidden

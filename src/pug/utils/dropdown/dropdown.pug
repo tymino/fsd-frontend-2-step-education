@@ -6,6 +6,7 @@ mixin dropdown({type = 'text', name, placeholder, istitle = false, texttitle} = 
     if istitle
       +heading({typetag: 3, text: `${texttitle}`, classmodify: 'dropdown__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
       input(
+        disabled
         class=`dropdown__input js-dropdown__input-${type} modf__font-family--open-sans modf__font-weight--normal`
         type=type,
         name=name,
@@ -16,9 +17,11 @@ mixin dropdown({type = 'text', name, placeholder, istitle = false, texttitle} = 
           type: 'keyboard_arrow_down', 
         })
       .dropdown__drop-menu
-        +selectcount({blockname: 'drop-menu', texttitle: 'спальни'})
-        +selectcount({blockname: 'drop-menu', texttitle: 'кровати'})
-        +selectcount({blockname: 'drop-menu', texttitle: 'ванные комнаты'})
+        +selectcount({blockname: 'drop-menu', texttitle: 'взрослые', row: 1})
+        +selectcount({blockname: 'drop-menu', texttitle: 'дети', row: 2})
+        +selectcount({blockname: 'drop-menu', texttitle: 'младенцы', row: 3})
+        +selectcount({blockname: 'drop-menu', texttitle: 'младенцы', row: 3, isBtn: true, visibleReset: ''})
+
     else
       input(
         class=`dropdown__input js-dropdown__input-${type} modf__font-family--open-sans modf__font-weight--normal`
