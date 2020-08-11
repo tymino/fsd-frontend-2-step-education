@@ -1,0 +1,9 @@
+include ../heading/heading
+
+mixin checkbox({name} = {})
+  ul
+  each val in name
+    - console.log(val)
+    li
+      input(type="checkbox" id=val name=val)
+      label(for=val)= val

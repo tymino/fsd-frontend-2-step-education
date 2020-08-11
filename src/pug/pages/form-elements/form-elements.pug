@@ -4,6 +4,7 @@ include ../../utils/logo-ui-kit/logo-ui-kit
 include ../../utils/textinput/textinput
 include ../../utils/dropdown/dropdown
 include ../../utils/subscription/subscription
+include ../../utils/checkbox/checkbox
 
 //- include ../../utils/text-field/text-field.pug
 include ../../utils/datedropdown/filter-date/filter-date
@@ -31,7 +32,9 @@ block content
         name: 'text',
         placeholder: 'Сколько гостей',
         istitle: true,
-        texttitle: 'Dropdown'
+        texttitle: 'Dropdown',
+        name: ['взрослые', 'дети', 'младенцы'],
+        row: [1, 2, 3]
       })
       +textinput({
         type: 'date',
@@ -49,12 +52,16 @@ block content
         istitle: true,
         texttitle: 'subscription text field'
       })
-      //- +textinput({
-      //-   type: 'month',
-      //-   name: 'datetime',
-      //-   placeholder: 'Email arrow_forward',
-      //-   istitle: true,
-      //-   texttitle: 'subscription text field'
-      //- })
+      //- rewrite, add options for drop-menu
+      +dropdown({
+        type: 'bed',
+        name: 'text',
+        placeholder: 'Сколько спален',
+        istitle: true,
+        texttitle: 'Dropdown',
+        name: ['спальни', 'кровани', 'ванные'],
+        row: [11, 12, 13]
+      })
     section.container__column2
+      +checkbox({name: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
     section.container__column3
