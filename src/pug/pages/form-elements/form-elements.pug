@@ -63,5 +63,6 @@ block content
         row: [11, 12, 13]
       })
     section.container__column2
-      +checkbox({blockName: 'column2__checkbox-buttons', arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+      .column2__checkbox-buttons
+        +checkbox({arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
     section.container__column3

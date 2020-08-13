@@ -1,8 +1,8 @@
 include ../heading/heading
 
-mixin checkbox({blockName, arrayItems} = {})
-  ul(class=`${blockName} checkbox-list`)
+mixin checkbox({arrayItems} = {})
+  ul.checkbox-list
   each val, index in arrayItems
-    li(class=`checkbox-list__item `)
+    li(class=`checkbox-list__item`)
       input(type="checkbox" name=val class=`checkbox-list__input js-checkbox-list__input-${index}`)
       label(for=val class=`checkbox-list__label js-checkbox-list__label-${index}`)= val

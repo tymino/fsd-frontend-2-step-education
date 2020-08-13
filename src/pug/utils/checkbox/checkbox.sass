@@ -1,3 +1,5 @@
+.checkbox-list
+  
 .checkbox-list__item
   list-style: none
   width: 226px
@@ -5,7 +7,67 @@
   margin: 15px
 
 .checkbox-list__input
-  margin-right: 10px 
+  position: absolute
+  // z-index: -1
+  opacity: 0
+  width: 20px
+  height: 20px 
+
+.checkbox-list__input+label
+  display: inline-flex
+  align-items: flex-start
+  user-select: none
+
+.checkbox-list__input+label:before
+  content: ''
+  display: inline-block
+  width: 20px
+  height: 20px
+  flex-shrink: 0
+  flex-grow: 0
+  border: 1px solid #adb5bd
+  border-radius: 4px
+  margin-right: 10px
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: 50% 50%
+
+.checkbox-list__input
+  &:checked+label
+    &:before
+      border-color: #0b76ef
+      background-color: #83cc71a9
+      background-image: url('./../pug/utils/checkbox/img/checkbox.svg')
+
+.checkbox-list__input
+  &:not(:disabled)
+    &:not(:checked)+label
+      &:hover
+        &:before
+          border-color: #b3d7ff
+
+.checkbox-list__input
+  &:not(:disabled)
+    &:active+label
+      &:before
+        background-color: #b3d7ff
+        border-color: #b3d7ff
+
+.checkbox-list__input
+  &:focus+label
+    &:before
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)
+
+.checkbox-list__input
+  &:focus
+    &:not(:checked)+label
+      &:before
+        border-color: #80bdff
+
+.checkbox-list__input
+  &:disabled+label
+    &:before
+      background-color: #e9ecef
 
 .checkbox-list__label
   font-family: $fontsans

@@ -41,7 +41,8 @@ module.exports = {
         loader: 'file-loader',
         exclude: [/fonts/, /static/],
         options: {
-          name: `${PATHS.public}img/[name].[ext]`,
+          name: `../img/[name].[ext]`,
+          emitFile: false,
         }
       },
       {
@@ -55,29 +56,19 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
+          { loader: 'style-loader' },
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              esModule: true,
-            },
+            options: { esModule: true },
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
+            options: { sourceMap: true },
           },
-          {
-            loader: 'postcss-loader',
-          },
+          { loader: 'postcss-loader' },
           {
             loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
+            options: { sourceMap: true },
           },
         ]
       },
@@ -96,6 +87,10 @@ module.exports = {
       patterns: [
         {
           from: `${PATHS.src}/pug/utils/logo-ui-kit/img`,
+          to: 'img'
+        },
+        {
+          from: `${PATHS.src}/pug/utils/checkbox/img`,
           to: 'img'
         },
         {
