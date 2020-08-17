@@ -1,0 +1,11 @@
+mixin info-img({blockname, nameimg, colorimg, sizeimg, maintitle, descrip} = {})
+  div(class=`${blockname}__info-img info-img info-img--margin-top`)
+    .info-img__icon
+      +material-icons({
+        type: nameimg,
+        color: colorimg,
+        size: sizeimg
+      })
+    .info-img__info
+      .info__maintitle= maintitle
+      .info__descrip= descrip

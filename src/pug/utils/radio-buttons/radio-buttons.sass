@@ -1,0 +1,51 @@
+.column2__radio-buttons
+  margin-top: 40px
+
+.radio-buttons__container
+  margin-top: 16px
+  display: flex
+  justify-content: space-between
+  max-width: 220px
+
+.radio-buttons__item
+  list-style-type: none
+
+// .radio-buttons__item input[type=radio]
+.radio-buttons__input
+	display: none
+
+// .radio-buttons__item label
+.radio-buttons__label
+	cursor: pointer
+	position: relative
+	padding-left: 30px
+	margin-right: 0
+	line-height: 24px
+	user-select: none
+
+.radio-buttons__label
+  &:before
+    content: ""
+    display: inline-block
+    width: 20px
+    height: 20px
+    position: absolute
+    left: 0
+    background: url('./../pug/utils/radio-buttons/img/circle.svg')
+    background-repeat: no-repeat
+    background-position: center center
+
+/* Checked */
+.radio-buttons__input
+  &:checked + label
+    &:before
+      background: url('./../pug/utils/radio-buttons/img/dot-radio.svg')
+      background-repeat: no-repeat
+      background-position: center center
+
+/* Hover */
+.radio-buttons__label
+  &:hover
+    color: $purple
+    &:before
+      filter: brightness(110%)

@@ -1,0 +1,8 @@
+mixin radio-buttons({arrayItems} = {})
+  .radio-buttons__container
+    .radio-buttons__item
+      input(id='man' type="radio" name='gender' class=`radio-buttons__input` value='0')
+      label(for='man' class=`radio-buttons__label`)= arrayItems[0]
+    .radio-buttons__item
+      input(id='woman' type="radio" name='gender' class=`radio-buttons__input` value='0')
+      label(for='woman' class=`radio-buttons__label`)= arrayItems[1]
