@@ -1,7 +1,7 @@
 include ../heading/heading
 
-mixin textinput({type = 'text', name, placeholder, istitle = false, texttitle} = {})
-  .column1__text-input.text-input.text-input--margin-top
+mixin textinput({type = 'text', name, placeholder, istitle = false, texttitle, margintop} = {})
+  div(class=`column1__text-input text-input ${margintop}`)
     if istitle
       +heading({typetag: 3, text: texttitle, classmodify: 'text-input__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
       input(

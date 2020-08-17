@@ -1,0 +1,15 @@
+include ../../utils/checkbox/checkbox
+
+mixin exp-checkbox({blockname, arrayItems} = {})
+  div(class=`${blockname} exp-checkbox exp-checkbox--margin-top`)
+    .exp-checkbox__header-container
+      +heading({typetag: 3, text: 'expandable checkbox list', classmodify: 'exp-checkbox__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
+      .exp-checkbox__arrow-down
+        +material-icons({ type: 'keyboard_arrow_down' })
+    .exp-checkbox__checkbox-list-container
+      +checkbox({arrayItems})
+    //- ul.exp-checkbox__checkbox-list.checkbox-list
+    //- each val, index in arrayItems
+    //-   li(class=`checkbox-list__item`)
+    //-     input(type="checkbox" name=val class=`checkbox-list__input js-checkbox-list__input-${index}`)
+    //-     label(for=val class=`checkbox-list__label js-checkbox-list__label-${index}`)= val

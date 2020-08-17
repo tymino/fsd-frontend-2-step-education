@@ -5,6 +5,7 @@ include ../../utils/textinput/textinput
 include ../../utils/dropdown/dropdown
 include ../../utils/subscription/subscription
 include ../../utils/checkbox/checkbox
+include ../../utils/exp-checkbox/exp-checkbox
 
 //- include ../../utils/text-field/text-field.pug
 include ../../utils/datedropdown/filter-date/filter-date
@@ -25,7 +26,8 @@ block content
         name: 'email',
         placeholder: 'Email',
         istitle: true,
-        texttitle: 'Text Field'
+        texttitle: 'Text Field',
+        margintop: ''
       })
       +dropdown({
         type: 'guess',
@@ -41,7 +43,8 @@ block content
         name: 'date',
         placeholder: 'дд.мм.гггг',
         istitle: true,
-        texttitle: 'masked text field'
+        texttitle: 'masked text field',
+        margintop: 'text-input--margin-top'
       })
       +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
       +filter-date({ firstHeader: 'filter date dropdown', })
@@ -62,7 +65,9 @@ block content
         name: ['спальни', 'кровани', 'ванные'],
         row: [11, 12, 13]
       })
+      +exp-checkbox({blockname: 'column1__exp-checkbox', arrayItems: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
     section.container__column2
       .column2__checkbox-buttons
+        +heading({typetag: 3, text: 'Checkbox Buttons', classmodify: 'checkbox-buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
         +checkbox({arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
     section.container__column3
