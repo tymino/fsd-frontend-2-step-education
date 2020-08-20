@@ -1,0 +1,31 @@
+.bullet-list__title
+  margin-bottom: 16px
+
+.bullet-list
+
+.bullet-list__item
+  position: relative
+  list-style: none
+  padding-bottom: 10px
+  width: 300px
+  list-style-position: outside
+
+  font-family: $fontsans
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 24px
+  color: $darkshade75
+
+  .bullet-list__item-block
+    margin-left: 20px
+
+
+.bullet-list__item:before
+  content: ''
+  position: absolute
+  top: 7px
+  height: 10px
+  width: 10px
+  border-radius: 50%
+  background-color: $darkshade25
