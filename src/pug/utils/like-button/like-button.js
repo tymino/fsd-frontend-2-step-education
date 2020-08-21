@@ -4,6 +4,10 @@ uiKitContainer.addEventListener('click', (e) => {
   if (e.target.closest('button')) {
     const btnTarget = e.target.closest('button');
 
+    if (!btnTarget.classList.contains('like-button__button')) {
+      return;
+    }
+
     const childObj = {
       iconHeart: btnTarget.firstChild.firstChild,
       countLike: btnTarget.firstChild.lastChild

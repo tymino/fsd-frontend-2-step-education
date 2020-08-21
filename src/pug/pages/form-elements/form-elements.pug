@@ -13,6 +13,7 @@ include ../../utils/rate-buttons/rate-buttons
 include ../../utils/like-button/like-button
 include ../../utils/rich-checkbox-button/rich-checkbox-button
 include ../../utils/bullet-list/bullet-list
+include ../../utils/buttons/buttons
 
 //- include ../../utils/text-field/text-field.pug
 include ../../utils/datedropdown/filter-date/filter-date
@@ -114,6 +115,33 @@ block content
           ]
         })
     section.container__column3
+      .column3__buttons
+        +heading({typetag: 3, text: 'buttons', classmodify: 'buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
+        .buttons_container
+          +buttons({
+          type: 'button',
+          text: 'click me',
+          infotype: 'primary',
+          icon: false
+          })
+          +buttons({
+            type: 'button',
+            text: 'click me',
+            infotype: 'secondary',
+            icon: false
+          })
+          +buttons({
+            type: 'button',
+            text: 'click me',
+            infotype: 'link',
+            icon: false
+          })
+          +buttons({
+            type: 'submit',
+            text: 'перейти к оплате',
+            infotype: 'primary',
+            icon: true
+          })
       .column3__bullet-list
         +heading({typetag: 3, text: 'bullet list', classmodify: 'bullet-list__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
         +bullet-list({
