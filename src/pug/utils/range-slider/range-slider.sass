@@ -1,0 +1,77 @@
+.range-slider__container
+  width: 266px
+
+  .range-slider__head-wrapper
+    display: flex
+    justify-content: space-between
+    margin-bottom: 24px
+
+    .range-slider__title
+      font-family: $fontsans
+      font-style: normal
+      font-weight: bold
+      font-size: 12px
+      line-height: 15px
+      text-transform: uppercase
+
+    .range-slider__cost
+      font-family: $fontsans
+      font-style: normal
+      font-weight: normal
+      font-size: 12px
+      line-height: 15px
+      text-transform: uppercase
+      color: $darkshade50
+
+
+.range-slider__slider-wrapper
+  position: relative
+  height: 6px
+  border: 1px solid $darkshade25
+  border-radius: 3px
+
+  .range-slider__span:after
+    content: ' '
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    z-index: 5
+
+  .range-slider__input
+    position: absolute
+    top: -3px
+    left: 1.5px
+
+    box-sizing: border-box
+    appearance: none
+    width: 262px
+    margin: 0
+    overflow: hidden
+    outline: none
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%) no-repeat center
+    background-size: 100% 6px
+    pointer-events: none
+
+    &:active,
+    &:focus 
+      outline: none
+    
+    &::-webkit-slider-thumb 
+      height: 12px
+      width: 12px
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+      border: 2px solid #FFFFFF
+      border-radius: 10px
+      position: relative
+      cursor: pointer
+      appearance: none
+      pointer-events: all
+
+
+    &:nth-child(1) 
+    //   &::-webkit-slider-thumb::before
+    //     background-color: red
+
+    &:nth-child(2) 
+      background: none
+
+      // &::-webkit-slider-thumb::before
+      //   background-color: grey

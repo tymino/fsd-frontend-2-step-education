@@ -1,0 +1,15 @@
+mixin range-slider({title}={})
+  - min = 0;
+  - max = 10000;
+  - step = 10;
+  - minVal = 7500;
+  - maxVal = 9500;
+
+  .range-slider__container
+    .range-slider__head-wrapper
+      .range-slider__title= title
+      .range-slider__cost= `${minVal} ₽ - ${maxVal} ₽`
+    .range-slider__slider-wrapper
+      input#lower.range-slider__input(type='range' step=step min=min max=max value=minVal)
+      input#upper.range-slider__input(type='range' step=step min=min max=max value=maxVal)
+      span.range-slider__span
