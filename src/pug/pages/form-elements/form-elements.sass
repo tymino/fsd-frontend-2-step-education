@@ -1,6 +1,35 @@
 // colors-type
 .ui-kit__container
-  padding-bottom: 140px
+  padding: 0 150px
+
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr 1fr
+
+
+  .container__column1
+    grid-column-start: 1
+    grid-column-end: 2
+    grid-row-start: 1
+    grid-row-end: 4
+
+  .container__column2
+    grid-column-start: 2
+    grid-column-end: 3
+    grid-row-start: 1
+    grid-row-end: 3
+  .container__column3
+    grid-column-start: 3
+    grid-column-end: 4
+    grid-row-start: 1
+    grid-row-end: 3
+  .container__bottom-row
+    grid-column-start: 2
+    grid-column-end: 4
+    grid-row-start: 3
+    grid-row-end: 4
+
+    margin-top: 174px
 
 
 .column2__radio-buttons
