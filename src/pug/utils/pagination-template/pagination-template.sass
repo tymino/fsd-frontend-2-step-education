@@ -1,0 +1,59 @@
+.pagination-template__title
+  margin-bottom: 16px
+
+
+.pagination-template__container
+  
+  .pagination-template__number-row
+    display: flex
+
+    &:ntx-first-child
+      border: 1px solid black
+
+    &:last-child
+      border: 1px solid black
+      
+    .pagination-template__button
+      width: 40px
+      height: 40px
+      cursor: pointer
+
+      display: flex
+      justify-content: center
+      align-items: center
+
+      font-family: $fontsans
+      font-style: normal
+      font-weight: normal
+      font-size: 12px
+      line-height: 15px
+      color: $darkshade50
+
+    .pagination-template__button--active
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+      border-radius: 22px
+
+      color: #ffffff
+      font-weight: bold
+
+
+    .pagination-template__arrow_forward
+      font-family: Material Icons
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+      border-radius: 22px
+
+      color: #ffffff
+      font-size: 24px
+      line-height: 20px
+
+
+  .pagination-template__number-info
+    font-family: $fontsans
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 24px
+    color: $darkshade75
+
+    padding-top: 10px
+    padding-left: 6px

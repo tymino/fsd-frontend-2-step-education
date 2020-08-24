@@ -15,6 +15,8 @@ include ../../utils/rich-checkbox-button/rich-checkbox-button
 include ../../utils/bullet-list/bullet-list
 include ../../utils/buttons/buttons
 include ../../utils/range-slider/range-slider
+include ../../utils/pagination-template/pagination-template
+include ../../utils/comments/comments
 
 //- include ../../utils/text-field/text-field.pug
 include ../../utils/datedropdown/filter-date/filter-date
@@ -145,8 +147,20 @@ block content
             infotype: 'primary',
             icon: true
           })
+
+      .column3__pagination-template
+        +heading({typetag: 3, text: 'pagination', classmodify: 'pagination-template__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
+        +pagination-template()
       .column3__bullet-list
         +heading({typetag: 3, text: 'bullet list', classmodify: 'bullet-list__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
         +bullet-list({
           arrayItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+        })
+
+    section.container__column4
+      .column4__comments
+        +comments({
+          name: 'Мурад Сарафанов',
+          days: '5 дней назад',
+          body: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
         })
