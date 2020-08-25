@@ -1,0 +1,76 @@
+include ../../textinput/textinput
+include ../../radio-buttons/radio-buttons
+include ../../toggle/toggle
+
+
+mixin signup()
+  .signup__container
+    +heading({
+      typetag: 3,
+      text: 'Регистрация аккаунта',
+      classmodify: 'signup__title'
+    })
+    .signup__textinput
+      +textinput({
+        type: 'text',
+        name: 'text',
+        placeholder: 'Имя',
+        istitle: false,
+        texttitle: ''
+      })
+    .signup__textinput
+      +textinput({
+        type: 'text',
+        name: 'text',
+        placeholder: 'Фамилия',
+        istitle: false,
+        texttitle: ''
+      })
+    .signup__radio-buttons
+      +radio-buttons({arrayItems: ['Мужчина', 'Женщина']})
+    .signup__date
+      +textinput({
+        type: 'date',
+        name: 'date',
+        placeholder: 'дд.мм.гггг',
+        istitle: true,
+        texttitle: 'дата рождения'
+      })
+    .signup__textinput
+      +textinput({
+        type: 'email',
+        name: 'email',
+        placeholder: 'Email',
+        istitle: true,
+        texttitle: 'данные для входа в сервис'
+      })
+    .signup__textinput
+      +textinput({
+        type: 'password',
+        name: 'password',
+        placeholder: 'Пароль',
+        istitle: false,
+        texttitle: ''
+      })
+    .signup__toggle
+      +toggle({ labelname: 'Получать спецпредложения', idname: 'one' })
+    .signup__buttons
+      +buttons({
+        type: 'submit',
+        text: 'перейти к оплате',
+        infotype: 'primary',
+        icon: true
+      })
+    .signup__info-signin
+      +heading({
+        typetag: 3,
+        text: 'Уже есть аккаунт на Toxin',
+        classmodify: 'info-signin__title'
+      })
+      .info-signin__button
+        +buttons({
+          type: 'button',
+          text: 'войти',
+          infotype: 'secondary',
+          icon: true
+        })

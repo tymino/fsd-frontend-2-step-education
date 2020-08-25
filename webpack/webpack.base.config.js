@@ -127,6 +127,10 @@ module.exports = {
       template: `${PAGES_DIR}form-elements/form-elements.pug`,
       filename: './form-elements.html',
     }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}cards/cards.pug`,
+      filename: './cards.html',
+    }),
   ]
 };
 

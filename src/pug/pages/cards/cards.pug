@@ -1,0 +1,23 @@
+extends ../../layout/ui-kit
+
+
+include ../../utils/logo-ui-kit/logo-ui-kit
+include ../../utils/heading/heading
+include ../../utils/forms/room-selection/room-selection
+include ../../utils/forms/signup/signup
+
+block variables
+  - var pageTitle = 'Cards';
+  - var pageDescription = 'Cards. Task 2';
+
+block content
+  .ui-kit__logo-wrapper
+    +logoimg()
+  .ui-kit__container-cards
+    section.container-cards__cards-column1
+      .cards-column1__room-selection
+        +room-selection()
+        +signup()
+    section.container-cards__cards-column2
+
+    section.container-cards__cards-column3
