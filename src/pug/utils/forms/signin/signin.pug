@@ -1,0 +1,48 @@
+include ../../textinput/textinput
+include ../../radio-buttons/radio-buttons
+include ../../toggle/toggle
+
+
+mixin signin()
+  .signin__container
+    +heading({
+      typetag: 3,
+      text: 'Войти',
+      classmodify: 'signin__title'
+    })
+    .signin__textinput
+      +textinput({
+        type: 'email',
+        name: 'email',
+        placeholder: 'Email',
+        istitle: false,
+        texttitle: ''
+      })
+    .signin__textinput
+      +textinput({
+        type: 'password',
+        name: 'password',
+        placeholder: 'Пароль',
+        istitle: false,
+        texttitle: ''
+      })
+    .signin__buttons
+      +buttons({
+        type: 'submit',
+        text: 'войти',
+        infotype: 'primary',
+        icon: true
+      })
+    .signin__info-signin
+      +heading({
+        typetag: 3,
+        text: 'Уже есть аккаунт на Toxin',
+        classmodify: 'info-signin__title'
+      })
+      .info-signin__button
+        +buttons({
+          type: 'button',
+          text: 'создать',
+          infotype: 'secondary',
+          icon: false
+        })

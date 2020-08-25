@@ -61,16 +61,16 @@ mixin signup()
         infotype: 'primary',
         icon: true
       })
-    .signup__info-signin
+    .signup__info-signup
       +heading({
         typetag: 3,
         text: 'Уже есть аккаунт на Toxin',
-        classmodify: 'info-signin__title'
+        classmodify: 'info-signup__title'
       })
-      .info-signin__button
+      .info-signup__button
         +buttons({
           type: 'button',
           text: 'войти',
           infotype: 'secondary',
-          icon: true
+          icon: false
         })
