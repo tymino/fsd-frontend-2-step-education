@@ -1,0 +1,60 @@
+include ../../textinput/textinput
+include ../../radio-buttons/radio-buttons
+include ../../toggle/toggle
+include ./info-room/info-room
+include ./info-room-cost/info-room-cost
+
+
+mixin deal()
+  .deal__container
+    .deal__info-room
+      +info-room({
+        number: '888',
+        luxury: true,
+        cost: '9990'
+      })
+    .deal__filter-date
+      +filter-date({
+        inputFieldType: 'range',
+        firstHeader: 'прибытие',
+        secondHeader: 'выезд'
+      })
+    .deal__dropdown
+      +dropdown({
+        type: 'guess',
+        name: 'text',
+        placeholder: 'Сколько гостей',
+        istitle: true,
+        texttitle: 'гости',
+        name: ['взрослые', 'дети', 'младенцы'],
+        row: [1, 2, 3]
+      })
+    .deal__info-room-cost-wrapper
+      +info-room-cost({
+        text: '9 990₽ х 4 суток',
+        info: false,
+        cost: '39960'
+      })
+      +info-room-cost({
+        text: 'Сбор за услуги: скидка 2 179₽',
+        info: true,
+        infotitle: 'подсказка',
+        cost: '0'
+      })
+      +info-room-cost({
+        text: 'Сбор за дополнительные услуги',
+        info: true,
+        infotitle: 'подсказка',
+        cost: '300'
+      })
+    .deal__total
+      .deal__total-name Итого
+      .deal__total-line 
+      .deal__total-number 38 081₽
+    .deal__buttons
+      +buttons({
+        type: 'submit',
+        text: 'подобрать номер',
+        infotype: 'primary',
+        icon: true
+      })

@@ -1,0 +1,15 @@
+mixin info-room-cost({text, info=false, infotitle, cost='5000'}={})
+  - let infoText = ''
+
+  if info
+    - infoText = 'info_outline'
+  else
+    - infoText = ''
+
+  
+  .info-room-cost__container
+    .info-room-cost__wrapper-info
+      .info-room-cost__text-info= text
+      .info-room-cost__symbol-info(title=infotitle)= infoText
+    .info-room-cost__cost= `${cost}₽`
+

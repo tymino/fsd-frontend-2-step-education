@@ -6,6 +6,7 @@ include ../../utils/heading/heading
 include ../../utils/forms/room-selection/room-selection
 include ../../utils/forms/signup/signup
 include ../../utils/forms/signin/signin
+include ../../utils/forms/deal/deal
 
 block variables
   - var pageTitle = 'Cards';
@@ -18,8 +19,11 @@ block content
     section.container-cards__cards-column1
       .cards-column1__room-selection
         +room-selection()
+      .cards-column1__signup
         +signup()
     section.container-cards__cards-column2
+      .cards-column2__deal
+        +deal()
+      .cards-column2__signin
         +signin()
-
     section.container-cards__cards-column3
