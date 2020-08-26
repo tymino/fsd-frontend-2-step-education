@@ -1,0 +1,90 @@
+.room__container
+  width: 270px
+  height: 257px
+  border-radius: 4px
+  background: #FFFFFF
+  border: 1px solid rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
+
+  .room__wrapper-room-select
+    position: relative
+
+    .room__image
+      background-repeat: no-repeat
+      background-position: center center
+
+    .room__arrow-left
+      position: absolute
+      font-family: Material Icons
+      font-size: 26px
+      color: #ffffff
+      top: 64px
+      left: 10px
+      cursor: pointer
+
+    .room__arrow-right
+      position: absolute
+      font-family: Material Icons
+      font-size: 26px
+      color: #ffffff
+      text-shadow: 1px 0px 4px black
+      top: 64px
+      right: 10px
+      cursor: pointer
+
+    .room__circle-wrapper
+      position: absolute
+      bottom: 20px
+      right: 0px
+
+      display: flex
+      width: 68px
+
+      .circle
+        width: 7.4px
+        height: 7.4px
+
+        margin: 3.4px
+
+        border-radius: 50%
+        border: 1px solid #FFFFFF
+        box-sizing: border-box
+        box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3)
+
+        cursor: pointer
+
+      .circle--active
+        width: 7.4px
+        height: 7.4px
+
+        border: 1px solid #FFFFFF
+        background: #FFFFFF
+        box-sizing: border-box
+        filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
+
+  .room__info-room
+    padding: 12px 20px
+
+  .room__decorate-line
+    margin: 0 auto
+    width: 230px
+    height: 1px
+    background: rgba(31, 32, 65, 0.1)
+
+  .room__wrapper-review
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 8px
+    padding-left: 20px
+    padding-right: 20px
+
+    .room__review-count
+      font-family: $fontsans
+      font-style: normal
+      font-weight: bold
+      font-size: 14px
+      line-height: 18px
+      text-align: right
+      color: $darkshade50

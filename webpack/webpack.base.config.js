@@ -106,6 +106,10 @@ module.exports = {
           to: 'img'
         },
         {
+          from: `${PATHS.src}/pug/utils/forms/room/img`,
+          to: 'img'
+        },
+        {
           from: `${PATHS.src}/fonts`,
           to: `${PATHS.public}fonts`
         },
