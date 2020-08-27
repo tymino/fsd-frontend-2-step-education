@@ -1,4 +1,5 @@
-const arrowDown = document.querySelector('.dropdown__arrow-down-guess');
+(() => {
+  const arrowDown = document.querySelector('.dropdown__arrow-down-guess');
 const dropMenuGuess = document.querySelector('.dropdown__drop-menu-guess');
 // Input
 const inputGuess = document.querySelector('.js-dropdown__input-guess');
@@ -163,4 +164,6 @@ btnApply13.addEventListener('click', (e) => {
   inputBed.value = `спальни: ${value11.innerHTML}, кровати: ${value12.innerHTML}, ванные: ${value13.innerHTML}`;
   inputBed.style.color = 'rgba(31, 32, 65, 0.75)';
   dropMenuBed.style.display = 'none';
+});
+
 });
