@@ -90,6 +90,10 @@ module.exports = {
           to: 'img'
         },
         {
+          from: `${PATHS.src}/pug/utils/logotype/img`,
+          to: 'img'
+        },
+        {
           from: `${PATHS.src}/pug/utils/checkbox/img`,
           to: 'img'
         },
@@ -134,6 +138,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}cards/cards.pug`,
       filename: './cards.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}headers-footers/headers-footers.pug`,
+      filename: './headers-footers.html',
     }),
   ]
 };

@@ -1,0 +1,29 @@
+include ./nav-menu/nav-menu
+
+header.header-container
+  .header-container__logo
+    +logotype()
+  .header-container__wrapper
+    .header-container__nav-menu
+      +nav-menu()
+    .header-container__buttons
+      +buttons({
+        type: 'button',
+        text: 'войти',
+        infotype: 'secondary',
+        icon: false
+      })
+    .header-container__buttons
+      +buttons({
+        type: 'button',
+        text: 'зарегистрироваться',
+        infotype: 'primary',
+        icon: false
+      })
+
+
+
+
+
+
+  
