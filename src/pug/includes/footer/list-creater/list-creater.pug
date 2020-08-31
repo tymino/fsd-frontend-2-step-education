@@ -1,0 +1,7 @@
+mixin list-creater({title, arrayText}={})
+  .list-creater__container
+    .list-creater__title= title
+    ul.list-creater__list
+      for t in arrayText
+        li.list-creater__item
+          a.list-creater__link(href='#')= t

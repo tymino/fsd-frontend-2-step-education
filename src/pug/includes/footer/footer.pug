@@ -1,0 +1,65 @@
+include ../../utils/subscription/subscription
+
+include ./list-creater/list-creater
+
+
+- let textUnderLogo = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
+- let copyrightText = 'Copyright © 2018 Toxin отель. Все права зачищены.»'
+
+- let textList1 = ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
+- let textList2 = ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
+- let textList3 = ['Соглашения', 'Сообщества', 'Связь с нами']
+- let textList4 = ['Получайте специальные предложения и новости сервиса']
+
+
+footer.footer-container
+  .footer-container__column-wrapper
+    .footer-container__column1
+      .footer-column1__logo
+        +logotype()
+      .footer-column1__text-under-logo= textUnderLogo
+
+    .footer-container__column2
+      +list-creater({
+        title: 'навигация',
+        arrayText: textList1
+      })
+
+    .footer-container__column3
+      +list-creater({
+        title: 'о нас',
+        arrayText: textList2
+      })
+
+    .footer-container__column4
+      +list-creater({
+        title: 'Служба поддержки',
+        arrayText: textList3
+      })
+
+    .footer-container__column5
+      +list-creater({
+        title: 'Подписка',
+        arrayText: textList4
+      })
+      .footer-container-input-wrapper
+        +subscription({
+          type: 'text',
+          name: 'subscription',
+          placeholder: 'Email',
+          istitle: false,
+        })
+
+  .footer-container__copyright-wrapper
+    .footer-container__copyright-info= copyrightText
+    .footer-container__copyright-social-wrapper
+      .footer-container__copyright-social-item
+        a.copyright-social-item__link(href='#')
+          i.copyright-social-item__icon(class="fab fa-twitter")
+      .footer-container__copyright-social-item
+        a.copyright-social-item__link(href='#')
+          i.copyright-social-item__icon(class="fab fa-facebook-square")
+      .footer-container__copyright-social-item
+        a.copyright-social-item__link(href='#')
+          i.copyright-social-item__icon(class="fab fa-instagram")
+

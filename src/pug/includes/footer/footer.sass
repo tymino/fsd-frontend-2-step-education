@@ -1,0 +1,110 @@
+.footer-container
+  padding-right: 140px
+  padding-left: 140px
+  padding-top: 100px
+  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1)
+
+  .footer-container__column-wrapper
+    display: flex
+    justify-content: space-between
+
+    padding-bottom: 100px
+
+    .footer-container__column1
+      width: 260px
+
+      .footer-column1__logo
+        margin-bottom: 20px
+        
+      .footer-column1__text-under-logo
+        font-family: $fontsans
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 24px
+        color: $darkshade75
+
+    .footer-container__column2
+      .footer-container__list
+        
+        .footer-container__item
+
+    .footer-container__column3
+    .footer-container__column4
+    .footer-container__column5
+      width: 260px
+
+  .footer-container__copyright-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    height: 70px
+
+    .footer-container__copyright-info
+      font-family: $fontsans
+      font-style: normal
+      font-weight: normal
+      font-size: 14px
+      line-height: 17px
+      color: $darkshade75
+
+    .footer-container__copyright-social-wrapper
+      display: flex
+
+      .footer-container__copyright-social-item
+        .copyright-social-item__link
+          .copyright-social-item__icon
+            width: 24px
+            height: 24px
+            padding: 0
+            margin-left: 20px
+
+
+// MEDIA
+@media all and ( max-width: 768px )
+  .footer-container
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1)
+
+    background: lightgray
+
+    display: flex
+    flex-direction: column
+
+    .footer-container__column-wrapper
+      display: flex
+      justify-content: center
+
+      .footer-container__column1
+        display: flex
+        justify-content: center
+
+        .footer-column1__logo
+          margin-bottom: 20px
+          
+        .footer-column1__text-under-logo
+          display: none
+
+      .footer-container__column2,
+      .footer-container__column3,
+      .footer-container__column4,
+      .footer-container__column5
+        display: none
+
+    .footer-container__copyright-wrapper
+      display: flex
+      flex-direction: column
+      margin-bottom: 120px
+
+      .footer-container__copyright-info
+
+      .footer-container__copyright-social-wrapper
+        display: flex
+
+        .footer-container__copyright-social-item
+          .copyright-social-item__link
+            .copyright-social-item__icon
+              width: 24px
+              height: 24px
+              padding: 0
+              margin-left: 20px
