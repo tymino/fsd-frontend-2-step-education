@@ -159,6 +159,10 @@ module.exports = {
       template: `${PAGES_DIR}signup/signup.pug`,
       filename: './signup.html',
     }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}signin/signin.pug`,
+      filename: './signin.html',
+    }),
   ]
 };
 

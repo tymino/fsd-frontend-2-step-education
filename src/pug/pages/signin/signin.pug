@@ -1,0 +1,23 @@
+extends ../../layout/ui-kit
+
+include ../../utils/forms/signin/signin
+include ../../utils/logotype/logotype
+include ../../utils/buttons/buttons
+include ../../utils/material-icons/material-icons
+
+
+block variables
+  - let pageTitle = 'Sign in';
+  - let pageDescription = 'Sign in. Task 2';
+
+
+block content
+  .signin-page__container
+    section.signin-page__header
+      include ../../includes/header/header.pug
+    section.signin-page__body
+      img.signin-page__body-image(src="./img/sign-background.jpg", alt="sign-background")
+      .signin-page__block
+        +signin()
+    section.signin-page__footer
+      include ../../includes/footer/footer.pug
