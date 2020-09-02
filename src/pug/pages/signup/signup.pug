@@ -1,0 +1,23 @@
+extends ../../layout/ui-kit
+
+include ../../utils/forms/signup/signup
+include ../../utils/logotype/logotype
+include ../../utils/buttons/buttons
+include ../../utils/material-icons/material-icons
+
+
+block variables
+  - let pageTitle = 'Registration';
+  - let pageDescription = 'Registration. Task 2';
+
+
+block content
+  .signup-page__container
+    section.signup-page__header
+      include ../../includes/header/header.pug
+    section.signup-page__body
+      img.signup-page__body-image(src="./img/sign-background.jpg", alt="sign-background")
+      .signup-page__block
+        +signup()
+    section.signup-page__footer
+      include ../../includes/footer/footer.pug
