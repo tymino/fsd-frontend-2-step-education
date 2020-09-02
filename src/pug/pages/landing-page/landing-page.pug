@@ -1,0 +1,24 @@
+extends ../../layout/ui-kit
+
+include ../../utils/forms/room-selection/room-selection
+include ../../utils/logotype/logotype
+include ../../utils/buttons/buttons
+
+
+block variables
+  - let pageTitle = 'Landing Page';
+  - let pageDescription = 'Landing Page. Task 2';
+  - let infoText = 'Лучшие номера для вашей работы, отдыха и просто вдохновения'
+
+
+block content
+  .landing-page__container
+    section.landing-page__header
+      include ../../includes/header/header.pug
+    section.landing-page__body
+      img.landing-page__body-image(src="./img/landing-page-background.jpg", alt="landing-page-background")
+      .body-image__block
+        +room-selection()
+      .body-image__info= infoText
+    section.landing-page__footer
+      include ../../includes/footer/footer.pug

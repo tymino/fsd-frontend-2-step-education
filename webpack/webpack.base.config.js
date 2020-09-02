@@ -114,6 +114,10 @@ module.exports = {
           to: 'img'
         },
         {
+          from: `${PATHS.src}/pug/pages/landing-page/img`,
+          to: 'img'
+        },
+        {
           from: `${PATHS.src}/fonts`,
           to: `${PATHS.public}fonts`
         },
@@ -142,6 +146,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}headers-footers/headers-footers.pug`,
       filename: './headers-footers.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}landing-page/landing-page.pug`,
+      filename: './landing-page.html',
     }),
   ]
 };
