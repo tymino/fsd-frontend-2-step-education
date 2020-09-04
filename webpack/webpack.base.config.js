@@ -122,6 +122,10 @@ module.exports = {
           to: 'img'
         },
         {
+          from: `${PATHS.src}/pug/pages/room-details/img`,
+          to: 'img'
+        },
+        {
           from: `${PATHS.src}/fonts`,
           to: `${PATHS.public}fonts`
         },
@@ -162,6 +166,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}signin/signin.pug`,
       filename: './signin.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}room-details/room-details.pug`,
+      filename: './room-details.html',
     }),
   ]
 };

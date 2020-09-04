@@ -1,8 +1,8 @@
-mixin comments({name, days, body}={})
+mixin comments({avatar='avatar', name, days, body}={})
   .comments__container
     .comments__wrapper-info
       img.comments__avatar(
-        src="./img/avatar.png",
+        src=`./img/${avatar}.png`,
         alt="avatar"
         height='48'
         width='48'

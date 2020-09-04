@@ -1,0 +1,115 @@
+extends ../../layout/ui-kit
+
+include ../../utils/forms/signin/signin
+include ../../utils/logotype/logotype
+include ../../utils/buttons/buttons
+include ../../utils/material-icons/material-icons
+include ../../utils/info-img/info-img
+include ../../utils/comments/comments
+include ../../utils/like-button/like-button
+include ../../utils/bullet-list/bullet-list
+include ../../utils/forms/deal/deal
+include ../../utils/datedropdown/filter-date/filter-date
+include ../../utils/dropdown/dropdown
+
+block variables
+  - let pageTitle = 'Room details';
+  - let pageDescription = 'Room details. Task 2';
+
+
+block content
+  .room-details-page__container
+    section.room-details-page__header
+      include ../../includes/header/header.pug
+    section.room-details-page__body
+      .room-details-page__body-image-wrapper
+        img.room-details-page__image-main(src="./img/room-det-1.jpg", alt="room-details")
+        .room-details-page__image-right-wrapper
+          img.room-details-page__image(src="./img/room-det-2.jpg", alt="room-details-1")
+          img.room-details-page__image(src="./img/room-det-3.jpg", alt="room-details-1")
+
+      .room-details-page__body-information-wrapper
+        .room-details-page__body-information-container
+          .body-information-container__info-room
+            .info-room__wrapper-info-img-title Сведения о номере
+              +info-img({
+                blockname: 'info-room',
+                nameimg: 'tag_faces',
+                colorimg: 'purple-gradient',
+                sizeimg: 'large',
+                maintitle: 'Комфорт',
+                descrip: 'Шумопоглощающие стены'
+              })
+              +info-img({
+                blockname: 'info-room',
+                nameimg: 'location_city',
+                colorimg: 'purple-gradient',
+                sizeimg: 'large',
+                maintitle: 'Удобство',
+                descrip: 'Окно в каждой из спален'
+              })
+              +info-img({
+                blockname: 'info-room',
+                nameimg: 'whatshot',
+                colorimg: 'purple-gradient',
+                sizeimg: 'large',
+                maintitle: 'Уют',
+                descrip: 'Номер оснащён камином'
+              })
+            .info-room__wrapper-graph
+              .wrapper-graph__title Впечатления от номера
+              .wrapper-graph__container
+                .wrapper-graph__graph
+                  <svg>
+                    <circle cy=60 cx=60 r=50 fill=transparent stroke="white" stroke-width="4"></circle>
+                    <circle class="st0" cy=60 cx=-60 r=50 fill=transparent stroke="#BC9CFF" stroke-width="6" stroke-dasharray="32%,1000"  stroke-dashoffset=-2></circle>
+                    <circle class="st0" cy=60 cx=-60 r=50 fill=transparent stroke="#6FCF97" stroke-width="6" stroke-dasharray="32%,1000"  stroke-dashoffset=-82></circle>
+                    <circle class="st0" cy=60 cx=-60 r=50 fill=transparent stroke="#FFE39C" stroke-width="6" stroke-dasharray="63%,1000"  stroke-dashoffset=-162></circle>
+                  </svg>
+                  .wrapper-graph__graph-votes-wrapper
+                    .graph-votes-wrapper__number 260
+                    .graph-votes-wrapper__text голосов
+                .wrapper-graph__info
+                  .wrapper-graph__info-wrap
+                    .info-wrap__color.info-wrap__color--orange
+                    .info-wrap__text Великолепно 
+                  .wrapper-graph__info-wrap
+                    .info-wrap__color.info-wrap__color--green
+                    .info-wrap__text Хорошо 
+                  .wrapper-graph__info-wrap
+                    .info-wrap__color.info-wrap__color--purple
+                    .info-wrap__text Удовлетворительно
+                  .wrapper-graph__info-wrap
+                    .info-wrap__color.info-wrap__color--lightblack
+                    .info-wrap__text Разочарован
+
+          .body-information-container__comments-room
+            .comments-room__title Отзывы посетителей номера
+            .comments-room__comments
+              +comments({
+                avatar: 'avatar',
+                name: 'Мурад Сарафанов',
+                days: '5 дней назад',
+                body: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+              })
+            .comments-room__comments
+              +comments({
+                avatar: 'avatar2',
+                name: 'Патрисия Стёклышкова',
+                days: 'Неделю назад',
+                body: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+              })
+          .body-information-container__sub-info
+            .sub-info__wrapper
+              .sub-info__wrapper-title Правила
+              +bullet-list({
+                arrayItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+              })
+            .sub-info__wrapper
+              .sub-info__wrapper-title Отмена
+              .sub-info__wrapper-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room-details-page__body-information-form
+          +deal()
+
+    section.room-details-page__footer
+      include ../../includes/footer/footer.pug
