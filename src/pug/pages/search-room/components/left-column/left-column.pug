@@ -1,0 +1,48 @@
+include ../../../../utils/exp-checkbox/exp-checkbox
+include ../../../../utils/rich-checkbox-button/rich-checkbox-button
+include ../../../../utils/range-slider/range-slider
+
+mixin left-column()
+  .search-room__body-left-column
+    .body-left-column__filter-date
+      +filter-date({ firstHeader: 'даты пребывания в отеле', })
+
+    .body-left-column__dropdown-guess
+      +dropdown({
+        type: 'guess',
+        name: 'text',
+        placeholder: 'Сколько гостей',
+        istitle: true,
+        texttitle: 'гости',
+        name: ['взрослые', 'дети', 'младенцы'],
+        row: [1, 2, 3]
+      })
+
+    .body-left-column__range-cost
+      +range-slider({title: 'диапазон цены'})
+      .range-cost__sub-text Стоимость за сутки пребывания в номере
+
+    .body-left-column__checkbox-buttons
+      .checkbox-buttons__title Checkbox Buttons
+      +checkbox({arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+
+    .body-left-column__availability
+      .availability__title доступность
+      +rich-checkbox-button({
+        arrayItems: [
+          ['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'],
+          ['Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.']
+        ]
+      })
+    .body-left-column__dropdown-options
+      +dropdown({
+        type: 'bed',
+        name: 'text',
+        placeholder: 'Сколько спален',
+        istitle: true,
+        texttitle: 'удобства номера',
+        name: ['спальни', 'кровани', 'ванные'],
+        row: [11, 12, 13]
+      })
+    .body-left-column__checkbox-exp
+      +exp-checkbox({blockname: 'body-left-column__exp-checkbox', arrayItems: ['Завтрак','Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], title: 'дополнительные удобства'})

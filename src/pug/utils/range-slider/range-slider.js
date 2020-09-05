@@ -1,5 +1,6 @@
-(() => {
+
   const lowerSlider = document.querySelector('#lower');
+  console.log('lowerSlider');
   const upperSlider = document.querySelector('#upper');
   const rangeColor = document.querySelector('.range-slider__span-color');
   const divCostSlider = document.querySelector('.range-slider__cost');
@@ -57,4 +58,3 @@
     setCost();
     setRangeColor();
   });
-})

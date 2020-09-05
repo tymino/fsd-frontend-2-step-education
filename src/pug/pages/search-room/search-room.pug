@@ -1,0 +1,26 @@
+extends ../../layout/ui-kit
+
+include ../../utils/forms/room-selection/room-selection
+include ../../utils/logotype/logotype
+include ../../utils/buttons/buttons
+
+include ./components/left-column/left-column
+//- include ./components/right-column/right-column
+
+
+block variables
+  - let pageTitle = 'Search room';
+  - let pageDescription = 'Search room. Task 2';
+
+
+block content
+  .search-room__container
+    section.search-room__header
+      include ../../includes/header/header.pug
+    section.search-room__body
+      .search-room__body-left-column
+        +left-column()
+      .search-room__body-right-column
+      
+    section.search-room__footer
+      include ../../includes/footer/footer.pug
