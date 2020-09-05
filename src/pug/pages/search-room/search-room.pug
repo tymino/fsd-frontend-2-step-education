@@ -5,12 +5,27 @@ include ../../utils/logotype/logotype
 include ../../utils/buttons/buttons
 
 include ./components/left-column/left-column
-//- include ./components/right-column/right-column
+include ./components/right-column/right-column
 
 
 block variables
   - let pageTitle = 'Search room';
   - let pageDescription = 'Search room. Task 2';
+  -
+    var rooms = [
+      { number: '888', luxury: true, cost: '9990', reviewcount: '145' },
+      { number: '840', luxury: false, cost: '9900', reviewcount: '65' },
+      { number: '980', luxury: true, cost: '8500', reviewcount: '35' },
+      { number: '856', luxury: false, cost: '7300', reviewcount: '19' },
+      { number: '740', luxury: false, cost: '6000', reviewcount: '44' },
+      { number: '982', luxury: false, cost: '5800', reviewcount: '56' },
+      { number: '678', luxury: false, cost: '5500', reviewcount: '45' },
+      { number: '450', luxury: false, cost: '5300', reviewcount: '39' },
+      { number: '350', luxury: false, cost: '5000', reviewcount: '77' },
+      { number: '666', luxury: false, cost: '5000', reviewcount: '25' },
+      { number: '444', luxury: false, cost: '5000', reviewcount: '15' },
+      { number: '352', luxury: false, cost: '5000', reviewcount: '55' },
+    ]
 
 
 block content
@@ -18,9 +33,9 @@ block content
     section.search-room__header
       include ../../includes/header/header.pug
     section.search-room__body
-      .search-room__body-left-column
+      .search-room__body-left-column-wrapper
         +left-column()
-      .search-room__body-right-column
-      
+      .search-room__body-right-column-wrapper
+        +right-column({rooms})
     section.search-room__footer
       include ../../includes/footer/footer.pug
