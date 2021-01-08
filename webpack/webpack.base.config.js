@@ -175,6 +175,10 @@ module.exports = {
       template: `${PAGES_DIR}search-room/search-room.pug`,
       filename: './search-room.html',
     }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}_link-list/link-list.pug`,
+      filename: './link-list.html',
+    }),
   ]
 };
 
