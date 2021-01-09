@@ -1,14 +1,16 @@
 include ../../heading/heading
 
-mixin selectcount({blockname, name, row, isBtn, visibleReset=''} = {})
+mixin selectcount({blockname, name, isBtn, visibleReset=''} = {})
+  -value = 10
+
   if isBtn
     .selectcount__btn-container
-      button(class=`selectcount__btn-reset selectcount__btn-reset-${row} ${visibleReset}`) Очистить
-      button(class=`selectcount__btn-apply selectcount__btn-apply-${row}`) Применить
+      button(class=`selectcount__btn-reset ${visibleReset}`) Очистить
+      button(class=`selectcount__btn-apply`) Применить
   else
     div(class=`${blockname}__selectcount`).selectcount
-      +heading({typetag: 3, text: name, classmodify: `selectcount__title selectcount__title-${row} modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100`})
+      .selectcount__title= name
       .selectcount__wrapper
-        button(class= `selectcount__btn selectcount__btn-minus-${row}`) -
-        +heading({typetag: 3, text: '0', classmodify: `selectcount__count selectcount__count-${row} selectcount__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100`})
-        button(class= `selectcount__btn selectcount__btn-plus-${row}`) +
+        button(class= `selectcount__btn selectcount__btn-minus`) -
+        .selectcount__count=value
+        button(class= `selectcount__btn selectcount__btn-plus`) +

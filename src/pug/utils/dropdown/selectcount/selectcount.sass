@@ -4,56 +4,74 @@
   justify-content: space-between
   padding: 4px 10px
 
-.selectcount__wrapper
-  display: flex
-  align-items: center
+  &__btn-container
+    display: flex
+    justify-content: space-between
+    padding: 10px
 
-.selectcount__count
-  padding: 0 10px
-  width: 8px
-  text-align: center
-  
-
-.selectcount__btn
-  height: 30px
-  width: 30px
-  border-radius: 50%
-  background: none
-  border: 1px solid $darkshade25
-  box-shadow: none
-
-  &:focus
+  &__btn-reset
+    border: none
+    background: none
     outline: none
+    color: $darkshade50
+    text-transform: uppercase
+    font-family: $fontsans
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    cursor: pointer
 
+  &__btn-apply
+    border: none
+    background: none
+    outline: none
+    color: $purple
+    text-transform: uppercase
+    font-family: $fontsans
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    cursor: pointer
 
-.selectcount__btn-container
-  display: flex
-  justify-content: space-between
-  padding: 10px
+  &__title
+    font-family: $fontsans
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+    color: $darkshade100
 
-.selectcount__btn-reset
-  border: none
-  background: none
-  outline: none
-  color: $darkshade50
-  text-transform: uppercase
-  font-family: $fontsans
-  font-style: normal
-  font-weight: bold
-  font-size: 12px
-  line-height: 15px
+  &__wrapper
+    display: flex
+    align-items: center
 
-.selectcount__btn-apply
-  border: none
-  background: none
-  outline: none
-  color: $purple
-  text-transform: uppercase
-  font-family: $fontsans
-  font-style: normal
-  font-weight: bold
-  font-size: 12px
-  line-height: 15px
+  &__count
+    padding: 0 10px
+    width: 8px
 
-.selectcount__btn--visibility
-  visibility: hidden
+    font-family: $fontsans
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+    color: $darkshade100
+    text-align: center
+
+  &__btn
+    height: 30px
+    width: 30px
+    border-radius: 50%
+    background: none
+    border: 1px solid $darkshade25
+    box-shadow: none
+    cursor: pointer
+
+    &:focus
+      outline: none
+
+  &__btn--visibility
+    visibility: hidden

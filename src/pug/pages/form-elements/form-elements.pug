@@ -46,8 +46,7 @@ block content
         placeholder: 'Сколько гостей',
         istitle: true,
         texttitle: 'Dropdown',
-        name: ['взрослые', 'дети', 'младенцы'],
-        row: [1, 2, 3]
+        name: ['взрослые', 'дети', 'младенцы']
       })
       +textinput({
         type: 'date',
@@ -66,16 +65,15 @@ block content
         istitle: true,
         texttitle: 'subscription text field'
       })
-      //- rewrite, add options for drop-menu
-      +dropdown({
-        type: 'bed',
-        name: 'text',
-        placeholder: 'Сколько спален',
-        istitle: true,
-        texttitle: 'Dropdown',
-        name: ['спальни', 'кровани', 'ванные'],
-        row: [11, 12, 13]
-      })
+      .column1__dropdown--width266
+        +dropdown({
+          type: 'bed',
+          name: 'text',
+          placeholder: 'Сколько спален',
+          istitle: true,
+          texttitle: 'Dropdown',
+          name: ['спальни', 'кровани', 'ванные']
+        })
       +exp-checkbox({blockname: 'column1__exp-checkbox', arrayItems: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
 
       .column4__info-img-wrapper
