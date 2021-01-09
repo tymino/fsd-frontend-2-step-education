@@ -22,8 +22,8 @@ export default class LikeButton {
       this.button.classList.toggle('like-button__button--active');
 
       const childObj = {
-        iconHeart: this.button.firstChild.firstChild,
-        countLike: this.button.firstChild.lastChild
+        iconHeart: this.icon,
+        countLike: this.info
       };
 
       if (this.button.classList.contains('like-button__button--active')) {
