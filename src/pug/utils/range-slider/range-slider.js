@@ -86,9 +86,7 @@ export default class RangeSlider {
     for(let i = 0; i < sliderContainer.length; i++) {
       sliderArr.push(new RangeSlider(sliderContainer[i].id));
     }
-    console.log('success');
   } else {
-    console.log('Elemennt undefined');
     return;
   }
 })();

@@ -1,38 +1,57 @@
-// (() => {
-//   const uiKitContainer = document.querySelector('.ui-kit__container');
+export default class LikeButton {
+  constructor(element) {
+    this.container = element;
 
-//   // uiKitContainer.addEventListener('click', (e) => {
-//   document.addEventListener('click', (e) => {
-//     if (e.target.closest('button')) {
-//       const btnTarget = e.target.closest('button');
+    this.button = this.container.querySelector('.like-button__button');
+    this.wrapper = this.button.querySelector('.like-button_wrapper');
 
-//       if (!btnTarget.classList.contains('like-button__button')) {
-//         return;
-//       }
+    this.icon = this.wrapper.querySelector('.like-button_icon');
+    this.info = this.wrapper.querySelector('.like-button_info');
 
-//       const childObj = {
-//         iconHeart: btnTarget.firstChild.firstChild,
-//         countLike: btnTarget.firstChild.lastChild
-//       };
+    // this.isActive = this.button.value;
 
-//       btnTarget.classList.toggle('like-button__button--active');
+    this.initBtn();
+  }
 
-//       if (btnTarget.classList.contains('like-button__button--active')) {
-//         addLike(childObj);
-//       } else {
-//         subtractLike(childObj);
-//       }
-//     } else { return }
-//   });
+  initBtn() {
+    this.addListener();
+  }
 
+  addListener() {
+    this.button.addEventListener('click', () => {
+      this.button.classList.toggle('like-button__button--active');
 
-//   function addLike(childObj) {
-//     childObj.iconHeart.textContent = 'favorite';
-//     childObj.countLike.textContent = `${Number(childObj.countLike.textContent)+1}`;
-//   }
+      const childObj = {
+        iconHeart: this.button.firstChild.firstChild,
+        countLike: this.button.firstChild.lastChild
+      };
 
-//   function subtractLike(childObj) {
-//     childObj.iconHeart.textContent = 'favorite_border';
-//     childObj.countLike.textContent = `${Number(childObj.countLike.textContent)-1}`;
-//   }
-// })();
+      if (this.button.classList.contains('like-button__button--active')) {
+        this.addLike(childObj);
+      } else {
+        this.subtractLike(childObj);
+      }
+    })
+  }
+
+  addLike(childObj) {
+    childObj.iconHeart.textContent = 'favorite';
+    childObj.countLike.textContent = `${Number(childObj.countLike.textContent)+1}`;
+  }
+
+  subtractLike(childObj) {
+    childObj.iconHeart.textContent = 'favorite_border';
+    childObj.countLike.textContent = `${Number(childObj.countLike.textContent)-1}`;
+  }
+}
+
+(() => {
+  const container = document.getElementsByClassName('like-button__container');
+  let containerArr = [];
+
+  if (container) {
+    for(let i = 0; i < container.length; i++) {
+      containerArr.push(new LikeButton(container[i]));
+    }
+  } else { return }
+})();

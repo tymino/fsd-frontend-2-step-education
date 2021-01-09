@@ -1,6 +1,8 @@
-mixin like-button()
+mixin like-button({isActive}={})
+  -isActive = 'active'
+
   .like-button__container
-    button.like-button__button(type='button' name='rating')
+    button.like-button__button(type='button' name='rating' value=isActive)
       .like-button_wrapper
         .like-button_icon favorite_border
         .like-button_info 11
