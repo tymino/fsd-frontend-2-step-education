@@ -1,4 +1,4 @@
-mixin range-slider({title}={})
+mixin range-slider({id, title}={})
   //- - min = 0;
   //- - max = 10000;
   //- - step = 10;
@@ -10,7 +10,7 @@ mixin range-slider({title}={})
   - minVal = 5000;
   - maxVal = 7500;
 
-  .range-slider__container
+  .range-slider__container(id=`${id}`)
     .range-slider__head-wrapper
       .range-slider__title= title
       .range-slider__cost= `${minVal} ₽ - ${maxVal} ₽`

@@ -1,60 +1,94 @@
+export default class RangeSlider {
+  constructor(id) {
+    this.container = document.getElementById(id);
 
-  const lowerSlider = document.querySelector('#lower');
-  console.log('lowerSlider');
-  const upperSlider = document.querySelector('#upper');
-  const rangeColor = document.querySelector('.range-slider__span-color');
-  const divCostSlider = document.querySelector('.range-slider__cost');
+    this.headWrapper = this.container.querySelector('.range-slider__head-wrapper');
+    this.title = this.headWrapper.querySelector('.range-slider__title');
+    this.cost = this.headWrapper.querySelector('.range-slider__cost');
 
-  const STEP = parseInt(lowerSlider.step);
-  const MAXVAL = STEP / 1000;
+    this.sliderWrapper = this.container.querySelector('.range-slider__slider-wrapper');
+    this.lowerHandle = this.sliderWrapper.getElementsByClassName('range-slider__input')[0];
+    this.upperHandle = this.sliderWrapper.getElementsByClassName('range-slider__input')[1];
+    this.color = this.sliderWrapper.querySelector('.range-slider__span-color');
 
-  const setRangeColor = () => {
-    rangeColor.style.marginLeft = parseInt(lowerSlider.value * MAXVAL) + '%';
-    rangeColor.style.width = parseInt(upperSlider.value * MAXVAL) - parseInt(lowerSlider.value * MAXVAL) + '%';
+    this.step = parseInt(this.lowerHandle.step);
+    this.maxValue = this.step / 1000;
+
+    this.initSlider();
+  }
+
+  initSlider() {
+    this.setRangeColor();
+    this.addListeners();
+  }
+
+  setRangeColor() {
+    this.color.style.marginLeft = parseInt(this.lowerHandle.value * this.maxValue) + '%';
+    this.color.style.width = parseInt(this.upperHandle.value * this.maxValue) - parseInt(this.lowerHandle.value * this.maxValue) + '%';
   };
-  setRangeColor();
 
-  const convertCost = (value) => {
+  convertCost(value) {
     return value.toLocaleString('ru-RU', {
       style: 'currency',
       currency: 'RUB',
       minimumFractionDigits: 0
     });
   };
-
-  const setCost = () => {
-    let localLower = convertCost(parseInt(lowerSlider.value));
-    let localUpper = convertCost(parseInt(upperSlider.value));
-
-    divCostSlider.textContent = `${localLower} - ${localUpper}`;
+  
+  setCost() {
+    const localLower = this.convertCost(parseInt(this.lowerHandle.value));
+    const localUpper = this.convertCost(parseInt(this.upperHandle.value));
+  
+    this.cost.textContent = `${localLower} - ${localUpper}`;
   }
 
-  upperSlider.addEventListener('input', () => {
-    lowerVal = parseInt(lowerSlider.value);
-    upperVal = parseInt(upperSlider.value);
+  addListeners() {
+    let lowerVal = null;
+    let upperVal = null;
 
-    if (upperVal < lowerVal + STEP) {
-      lowerSlider.value = upperVal - STEP;
-
-      if (lowerSlider.value == lowerSlider.min) {
-        upperSlider.value = STEP;
+    this.upperHandle.addEventListener('input', () => {
+      lowerVal = parseInt(this.lowerHandle.value);
+      upperVal = parseInt(this.upperHandle.value);
+    
+      if (upperVal < lowerVal + this.step) {
+        this.lowerHandle.value = upperVal - this.step;
+    
+        if (this.lowerHandle.value == this.lowerHandle.min) {
+          this.upperHandle.value = this.step;
+        }
       }
-    }
-    setCost();
-    setRangeColor();
-  });
-
-  lowerSlider.addEventListener('input', () => {
-    lowerVal = parseInt(lowerSlider.value);
-    upperVal = parseInt(upperSlider.value);
-
-    if (lowerVal > upperVal - STEP) {
-      upperSlider.value = lowerVal + STEP;
-      
-      if (upperSlider.value == upperSlider.max) {
-        lowerSlider.value = parseInt(upperSlider.max) - STEP;
+      this.setCost();
+      this.setRangeColor();
+    });
+    
+    this.lowerHandle.addEventListener('input', () => {
+      lowerVal = parseInt(this.lowerHandle.value);
+      upperVal = parseInt(this.upperHandle.value);
+    
+      if (lowerVal > upperVal - this.step) {
+        this.upperHandle.value = lowerVal + this.step;
+        
+        if (this.upperHandle.value == this.upperHandle.max) {
+          this.lowerHandle.value = parseInt(this.upperHandle.max) - this.step;
+        }
       }
+      this.setCost();
+      this.setRangeColor();
+    });
+  }
+}
+
+(() => {
+  const sliderContainer = document.getElementsByClassName('range-slider__container');
+  let sliderArr = [];
+
+  if (sliderContainer) {
+    for(let i = 0; i < sliderContainer.length; i++) {
+      sliderArr.push(new RangeSlider(sliderContainer[i].id));
     }
-    setCost();
-    setRangeColor();
-  });
+    console.log('success');
+  } else {
+    console.log('Elemennt undefined');
+    return;
+  }
+})();
