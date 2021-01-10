@@ -74,7 +74,8 @@ block content
           texttitle: 'Dropdown',
           name: ['спальни', 'кровани', 'ванные']
         })
-      +exp-checkbox({blockname: 'column1__exp-checkbox', arrayItems: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+      .column1__exp-checkbox--margin-top
+        +exp-checkbox({blockname: 'column1__exp-checkbox', arrayItems: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
 
       .column4__info-img-wrapper
         +info-img({
