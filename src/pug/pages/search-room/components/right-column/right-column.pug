@@ -15,7 +15,8 @@ mixin right-column({rooms}={})
             number: room.number,
             luxury: room.luxury,
             cost: room.cost,
-            reviewcount: room.reviewcount
+            reviewcount: room.reviewcount,
+            rate: room.rate
           })
     .body-right-column__pages
       +pagination-template()
