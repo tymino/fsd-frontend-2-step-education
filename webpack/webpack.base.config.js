@@ -177,7 +177,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}_link-list/link-list.pug`,
-      filename: './link-list.html',
+      filename: './index.html',
     }),
   ]
 };
