@@ -1,11 +1,7 @@
-mixin rate-buttons({isDisabled=false, rate}={})
-  - let localRate = (rate > 0)  ? rate : 0
-
+mixin rate-buttons({rate}={})
   .rate-buttons__container
-    each val in [5, 4, 3, 2, 1]
-      if val == localRate
-        input.rate-buttons__input(id=`star${val}` type='radio' name='rating' value=val disabled=isDisabled checked)
+    each i in [5, 4, 3, 2, 1]
+      if i <= rate
+        div.rate-buttons__input(class=`rate-buttons__input--active` type='radio') star
       else
-        input.rate-buttons__input(id=`star${val}` type='radio' name='rating' value=val disabled=isDisabled)
-
-      label.rate-buttons__label(for=`star${val}` title=`${val} stars`)
+        div.rate-buttons__input(type='radio') star

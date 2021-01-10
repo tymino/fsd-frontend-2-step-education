@@ -1,33 +1,18 @@
-.rate-buttons__title
-  margin-bottom: 16px
+.rate-buttons
+  &__title
+    margin-bottom: 16px
 
-.rate-buttons__container
-  border: none
-  display: flex
-  flex-direction: row-reverse
-  justify-content: flex-end
+  &__container
+    border: none
+    display: flex
+    flex-direction: row-reverse
+    justify-content: flex-end
 
-.rate-buttons__input
-  appearance: none
+  &__input
+    margin: 0px
+    font-size: 1.4em
+    font-family: Material Icons
+    color: $darkshade25
 
-.rate-buttons__container > label:before
-  margin: 0px
-  font-size: 1.4em
-  font-family: Material Icons
-  content: "star"
-
-.rate-buttons__container > label
-  color: $darkshade25
-
-.rate-buttons__input:checked ~ label,
-.rate-buttons__container:not(:checked) > label:hover,
-.rate-buttons__container:not(:checked) > label:hover ~ label
-  color: $purple
-  cursor: pointer
-
-.rate-buttons__input:checked + label:hover,
-.rate-buttons__input:checked ~ label:hover,
-.rate-buttons__container > label:hover ~ input:checked ~ label,
-.rate-buttons__input:checked ~ label:hover ~ label
-  color: $purple
-  filter: brightness(110%)
+    &--active
+      color: $purple
