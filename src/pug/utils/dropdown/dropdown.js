@@ -63,6 +63,10 @@ export default class Dropdown {
     this.btnReset.addEventListener('click', () => {
       this.input.value = '';
       this.input.style.color = 'rgba(31, 32, 65, 0.25)';
+
+      this.dropMenuItems[0].querySelector('.selectcount__count').textContent = '0';
+      this.dropMenuItems[1].querySelector('.selectcount__count').textContent = '0';
+      this.dropMenuItems[2].querySelector('.selectcount__count').textContent = '0';
     });
 
     this.btnApply.addEventListener('click', () => {
