@@ -1,39 +1,44 @@
 .column1__subscription
 .subscription
-  position: relative
+  &--margin-top
+    margin-top: 40px
 
-.subscription--margin-top
-  margin-top: 40px
+  &__title
+  &__input-wrapper
+    position: relative
 
-.subscription__title
+  &__input
+    width: 268px
+    height: 44px
+    background: #FFFFFF
+    border: 1px solid $darkshade25
+    box-sizing: border-box
 
-.subscription__input
-  width: 268px
-  height: 44px
-  background: #FFFFFF
-  border: 1px solid $darkshade25
-  box-sizing: border-box
+    padding: 15px
+    font-size: 14px
+    line-height: 18px
+    border-radius: 4px
+    color: $darkshade25
 
-  padding: 15px
-  font-size: 14px
-  line-height: 18px
-  border-radius: 4px
-  color: $darkshade25
+    &:hover
+      border: 1px solid rgba(31, 32, 65, 0.5)
+      color: $darkshade75
+    &:focus
+      outline: none
+      border: 1px solid $darkshade50
+      color: $darkshade75
 
-  &:hover
-    border: 1px solid rgba(31, 32, 65, 0.5)
-    color: $darkshade75
-  &:focus
-    outline: none
-    border: 1px solid $darkshade50
-    color: $darkshade75
+  &__arrow_forward
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 0px
+    right: 0px
+    height: 42px
+    width: 44px 
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    background-clip: text
+    -webkit-text-fill-color: transparent
 
-.subscription__arrow_forward
-  position: absolute
-  top: 8px
-  left: 234px
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-  background-clip: text
-  -webkit-text-fill-color: transparent
-
-  cursor: pointer
+    cursor: pointer
