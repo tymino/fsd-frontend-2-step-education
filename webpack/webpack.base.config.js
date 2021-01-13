@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,7 +11,6 @@ const PATHS = {
 };
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 module.exports = {
   externals: {
@@ -135,13 +133,9 @@ module.exports = {
         },
       ]
     }),
-    // ...PAGES.map(page => new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/${page}`,
-    //   filename: `./${page.replace(/\.pug/,'.html')}`
-    // })),
     new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}colors-type/colors-type.pug`,
-      filename: './colors-type.html',
+      template: `${PAGES_DIR}colors-and-type/colors-and-type.pug`,
+      filename: './colors-and-type.html',
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}form-elements/form-elements.pug`,
@@ -152,8 +146,8 @@ module.exports = {
       filename: './cards.html',
     }),
     new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}headers-footers/headers-footers.pug`,
-      filename: './headers-footers.html',
+      template: `${PAGES_DIR}headers-and-footers/headers-and-footers.pug`,
+      filename: './headers-and-footers.html',
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}landing-page/landing-page.pug`,
@@ -181,9 +175,3 @@ module.exports = {
     }),
   ]
 };
-
-// module.exports = (env, argv) => {
-//   (argv.mode === 'production') ? 'source/' : 'public/'
-
-//   return /* baseConfig object */
-// }
