@@ -1,7 +1,5 @@
-// utils sass
 @import './utils/variables.sass'
 @import './utils/fonts.sass'
-@import './utils/bem-modificators'
 
 
 *
@@ -11,14 +9,13 @@
 html
   overflow-y: scroll
   font-family: $mainfont
+  font-size: 14px
 
-// pug/includes
 @import '../pug/includes/header/header'
 @import '../pug/includes/header/nav-menu/nav-menu'
 @import '../pug/includes/footer/footer'
 @import '../pug/includes/footer/list-creater/list-creater'
 
-// pug/pages
 @import '../pug/pages/_link-list/link-page'
 @import '../pug/pages/cards/cards'
 @import '../pug/pages/colors-and-type/colors-and-type'
@@ -32,7 +29,7 @@ html
 @import '../pug/pages/search-room/search-room'
 @import '../pug/pages/search-room/components/left-column/left-column'
 @import '../pug/pages/search-room/components/right-column/right-column'
-// pug/utils
+
 @import '../pug/utils/logo-ui-kit/logo-ui-kit'
 @import '../pug/utils/material-icons/material-icons'
 @import '../pug/utils/color/color'
@@ -54,6 +51,7 @@ html
 @import '../pug/utils/range-slider/range-slider'
 @import '../pug/utils/pagination-template/pagination-template'
 @import '../pug/utils/comments/comments'
+@import '../pug/utils/datedropdown/filter-date/filter-date'
 
 @import '../pug/utils/forms/room-selection/room-selection'
 @import '../pug/utils/forms/signup/signup'
@@ -63,6 +61,3 @@ html
 @import '../pug/utils/forms/deal/info-room-cost/info-room-cost'
 @import '../pug/utils/forms/room/room'
 @import '../pug/utils/forms/room/slider/slider'
-
-// Date
-@import '../pug/utils/datedropdown/filter-date/filter-date'

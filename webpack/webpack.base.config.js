@@ -140,42 +140,52 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}colors-and-type/colors-and-type.pug`,
       filename: './colors-and-type.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}form-elements/form-elements.pug`,
       filename: './form-elements.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}cards/cards.pug`,
       filename: './cards.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}headers-and-footers/headers-and-footers.pug`,
       filename: './headers-and-footers.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}landing-page/landing-page.pug`,
       filename: './landing-page.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}signup/signup.pug`,
       filename: './signup.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}signin/signin.pug`,
       filename: './signin.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}room-details/room-details.pug`,
       filename: './room-details.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}search-room/search-room.pug`,
       filename: './search-room.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}_link-list/link-list.pug`,
       filename: './index.html',
+      favicon: `${PATHS.src}/static/favicon.ico`
     }),
   ]
 };

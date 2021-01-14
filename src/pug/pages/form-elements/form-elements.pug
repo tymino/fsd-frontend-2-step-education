@@ -112,17 +112,17 @@ block content
         .column2__radio-buttons
           +radio-buttons({arrayItems: ['Мужчина', 'Женщина']})
       .column2__toggle-buttons-container
-        .column2__heading
+        .column2__heading.heading--marginb
           +heading({typetag: 3, text: 'toggle', color: '100', weight: 700})
         .column2__toggle-buttons
           +toggle({ labelname: 'Получать спецпредложения', idname: 'one' })
       .column2__like-button-container
-        .column2__heading
+        .column2__heading.heading--marginb
           +heading({typetag: 3, text: 'like button', color: '100', weight: 700})
         .column2__like-button
           +like-button()
       .column2__rate-buttons-container
-        .column2__heading
+        .column2__heading.heading--marginb
           +heading({typetag: 3, text: 'rate button', color: '100', weight: 700})
         .column2__rate-buttons
           +rate-buttons({isDisabled: false, rate: '2'})
@@ -140,7 +140,7 @@ block content
       .column3__range-slider
         +range-slider({id: 'range-slider-2', title: 'Range Slider'})
       .column3__buttons
-        .buttons__heading
+        .buttons__heading.heading--marginb
           +heading({typetag: 3, text: 'buttons', color: '100', weight: 700})
         .buttons_container
           .buttons__wrapper
@@ -172,12 +172,12 @@ block content
               icon: true
             })
       .column3__pagination-template-container
-        .column3__heading
+        .column3__heading.heading--marginb
           +heading({typetag: 3, text: 'pagination', color: '100', weight: 700})
         .column3__pagination-template
           +pagination-template()
       .column3__bullet-list-container.column3__bullet-list-container--top
-        .column3__heading
+        .column3__heading.heading--marginb
           +heading({typetag: 3, text: 'bullet list', color: '100', weight: 700})
         .column3__bullet-list
           +bullet-list({
