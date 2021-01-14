@@ -4,7 +4,7 @@ include ./selectcount/selectcount
 mixin dropdown({type = 'text', name, placeholder, istitle = false, texttitle} = {})
   .column1__dropdown.dropdown.dropdown--margin-top
     if istitle
-      .dropdown__title= `${texttitle}`
+      h3.dropdown__title= `${texttitle}`
     .dropdown__input-wrapper
       input(
         disabled

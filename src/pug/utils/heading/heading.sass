@@ -1,10 +1,42 @@
-.heading-item__label
+h1,h2,h3,p
+  margin: 0
+  padding: 0
 
-.heading-item__label--first-row
-  width: 5%
-  padding-right: 40px
-  display: flex
-  justify-content: flex-end
+h1
+  font-size: 24px
+  line-height: 30px
+h2
+  font-size: 19px
+  line-height: 24px
+h3
+  font-size: 12px
+  line-height: 15px
+  text-transform: uppercase
+p
+  font-size: 14px
+  line-height: 24px
 
-.heading-item__text
-  margin-left: 30px
+.heading
+  &__color
+    &--darkshade100
+      color: $darkshade100
+    &--darkshade75
+      color: $darkshade75
+    &--darkshade50
+      color: $darkshade50
+    &--darkshade25
+      color: $darkshade25
+    &--darkshade5
+      color: $darkshade5
+    &--purple
+      color: $purple
+    &--green
+      color: $green
+
+  &__weight
+    &--400
+      font-style: normal
+      font-weight: normal
+    &--700
+      font-style: normal
+      font-weight: bold

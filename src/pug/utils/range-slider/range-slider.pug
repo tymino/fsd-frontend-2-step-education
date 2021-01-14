@@ -12,7 +12,7 @@ mixin range-slider({id, title}={})
 
   .range-slider__container(id=`${id}`)
     .range-slider__head-wrapper
-      .range-slider__title= title
+      h3.range-slider__title= title
       .range-slider__cost= `${minVal} ₽ - ${maxVal} ₽`
     .range-slider__slider-wrapper
       input#lower.range-slider__input(type='range' step=step min=min max=max value=minVal)

@@ -17,10 +17,7 @@ include ../../utils/buttons/buttons
 include ../../utils/range-slider/range-slider
 include ../../utils/pagination-template/pagination-template
 include ../../utils/comments/comments
-
-//- include ../../utils/text-field/text-field.pug
 include ../../utils/datedropdown/filter-date/filter-date
-
 
 
 block variables
@@ -29,42 +26,49 @@ block variables
 
 block content
   .ui-kit__logo-wrapper
-    +logoimg()
+    .logo-wrapper__container
+      +logoimg()
   .ui-kit__container
     section.container__column1
-      +textinput({
-        type: 'email',
-        name: 'email',
-        placeholder: 'Email',
-        istitle: true,
-        texttitle: 'Text Field',
-        margintop: ''
-      })
-      +dropdown({
-        type: 'guess',
-        name: 'text',
-        placeholder: 'Сколько гостей',
-        istitle: true,
-        texttitle: 'Dropdown',
-        name: ['взрослые', 'дети', 'младенцы']
-      })
-      +textinput({
-        type: 'date',
-        name: 'date',
-        placeholder: 'дд.мм.гггг',
-        istitle: true,
-        texttitle: 'masked text field',
-        margintop: 'text-input--margin-top'
-      })
-      +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
-      +filter-date({ firstHeader: 'filter date dropdown', })
-      +subscription({
-        type: 'text',
-        name: 'subscription',
-        placeholder: 'Email',
-        istitle: true,
-        texttitle: 'subscription text field'
-      })
+      .column1__textinput
+        +textinput({
+          type: 'email',
+          name: 'email',
+          placeholder: 'Email',
+          istitle: true,
+          texttitle: 'Text Field',
+          margintop: ''
+        })
+      .column1__dropdown
+        +dropdown({
+          type: 'guess',
+          name: 'text',
+          placeholder: 'Сколько гостей',
+          istitle: true,
+          texttitle: 'Dropdown',
+          name: ['взрослые', 'дети', 'младенцы']
+        })
+      .column1__textinput
+        +textinput({
+          type: 'date',
+          name: 'date',
+          placeholder: 'дд.мм.гггг',
+          istitle: true,
+          texttitle: 'masked text field',
+          margintop: 'text-input--margin-top'
+        })
+      .column1__filter-date
+        +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
+      .column1__filter-date
+        +filter-date({ firstHeader: 'filter date dropdown', })
+      .column1__subscription
+        +subscription({
+          type: 'text',
+          name: 'subscription',
+          placeholder: 'Email',
+          istitle: true,
+          texttitle: 'subscription text field'
+        })
       .column1__dropdown--width266
         +dropdown({
           type: 'bed',
@@ -74,88 +78,111 @@ block content
           texttitle: 'Dropdown',
           name: ['спальни', 'кровани', 'ванные']
         })
-      .column1__exp-checkbox--margin-top
+      .column1__exp-checkbox.column1__exp-checkbox--top
         +exp-checkbox({blockname: 'column1__exp-checkbox', arrayItems: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
 
       .column4__info-img-wrapper
-        +info-img({
-          blockname: 'column1',
-          nameimg: 'tag_faces',
-          colorimg: 'purple-gradient',
-          sizeimg: 'large',
-          maintitle: 'Комфорт',
-          descrip: 'Шумопоглощающие стены'
-        })
-        +info-img({
-          blockname: 'column1',
-          nameimg: 'location_city',
-          colorimg: 'purple-gradient',
-          sizeimg: 'large',
-          maintitle: 'Удобство',
-          descrip: 'Окно в каждой из спален'
-        })
+        .info-img-wrapper__content
+          +info-img({
+            blockname: 'column1',
+            nameimg: 'tag_faces',
+            colorimg: 'purple-gradient',
+            sizeimg: 'large',
+            maintitle: 'Комфорт',
+            descrip: 'Шумопоглощающие стены'
+          })
+        .info-img-wrapper__content
+          +info-img({
+            blockname: 'column1',
+            nameimg: 'location_city',
+            colorimg: 'purple-gradient',
+            sizeimg: 'large',
+            maintitle: 'Удобство',
+            descrip: 'Окно в каждой из спален'
+          })
     section.container__column2
-      .column2__checkbox-buttons
-        +heading({typetag: 3, text: 'Checkbox Buttons', classmodify: 'checkbox-buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +checkbox({arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
-      .column2__radio-buttons
-        +heading({typetag: 3, text: 'Radio Buttons', classmodify: 'radio-buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +radio-buttons({arrayItems: ['Мужчина', 'Женщина']})
-      .column2__toggle-buttons
-        +heading({typetag: 3, text: 'toggle', classmodify: 'toggle-buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +toggle({ labelname: 'Получать спецпредложения', idname: 'one' })
-      .column2__like-button
-        +heading({typetag: 3, text: 'like button', classmodify: 'like-button__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +like-button()
-      .column2__rate-buttons
-        +heading({typetag: 3, text: 'rate button', classmodify: 'rate-buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +rate-buttons({isDisabled: false, rate: '2'})
-      .column2__rich-checkbox-buttons
-        +heading({typetag: 3, text: 'Rich Checkbox Buttons', classmodify: 'rich-checkbox-buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +rich-checkbox-button({
-          arrayItems: [
-            ['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'],
-            ['Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.']
-          ]
-        })
+      .column2__checkbox-buttons-container
+        .column2__heading
+          +heading({typetag: 3, text: 'Checkbox Buttons', color: '100', weight: 700})
+        .column2__checkbox
+          +checkbox({arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+      .column2__radio-buttons-container
+        .column2__heading
+          +heading({typetag: 3, text: 'Radio Buttons', color: '100', weight: 700})
+        .column2__radio-buttons
+          +radio-buttons({arrayItems: ['Мужчина', 'Женщина']})
+      .column2__toggle-buttons-container
+        .column2__heading
+          +heading({typetag: 3, text: 'toggle', color: '100', weight: 700})
+        .column2__toggle-buttons
+          +toggle({ labelname: 'Получать спецпредложения', idname: 'one' })
+      .column2__like-button-container
+        .column2__heading
+          +heading({typetag: 3, text: 'like button', color: '100', weight: 700})
+        .column2__like-button
+          +like-button()
+      .column2__rate-buttons-container
+        .column2__heading
+          +heading({typetag: 3, text: 'rate button', color: '100', weight: 700})
+        .column2__rate-buttons
+          +rate-buttons({isDisabled: false, rate: '2'})
+      .column2__rich-checkbox-buttons-container.column2__rich-checkbox-buttons-container--top
+        .column2__heading
+          +heading({typetag: 3, text: 'Rich Checkbox Buttons', color: '100', weight: 700})
+        .column2__rich-checkbox-buttons
+          +rich-checkbox-button({
+            arrayItems: [
+              ['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'],
+              ['Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.']
+            ]
+          })
     section.container__column3
       .column3__range-slider
         +range-slider({id: 'range-slider-2', title: 'Range Slider'})
       .column3__buttons
-        +heading({typetag: 3, text: 'buttons', classmodify: 'buttons__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
+        .buttons__heading
+          +heading({typetag: 3, text: 'buttons', color: '100', weight: 700})
         .buttons_container
-          +buttons({
-          type: 'button',
-          text: 'click me',
-          infotype: 'primary',
-          icon: false
-          })
-          +buttons({
+          .buttons__wrapper
+            +buttons({
             type: 'button',
             text: 'click me',
-            infotype: 'secondary',
-            icon: false
-          })
-          +buttons({
-            type: 'button',
-            text: 'click me',
-            infotype: 'link',
-            icon: false
-          })
-          +buttons({
-            type: 'submit',
-            text: 'перейти к оплате',
             infotype: 'primary',
-            icon: true
+            icon: false
+            })
+          .buttons__wrapper
+            +buttons({
+              type: 'button',
+              text: 'click me',
+              infotype: 'secondary',
+              icon: false
+            })
+          .buttons__wrapper
+            +buttons({
+              type: 'button',
+              text: 'click me',
+              infotype: 'link',
+              icon: false
+            })
+          .buttons__wrapper
+            +buttons({
+              type: 'submit',
+              text: 'перейти к оплате',
+              infotype: 'primary',
+              icon: true
+            })
+      .column3__pagination-template-container
+        .column3__heading
+          +heading({typetag: 3, text: 'pagination', color: '100', weight: 700})
+        .column3__pagination-template
+          +pagination-template()
+      .column3__bullet-list-container.column3__bullet-list-container--top
+        .column3__heading
+          +heading({typetag: 3, text: 'bullet list', color: '100', weight: 700})
+        .column3__bullet-list
+          +bullet-list({
+            arrayItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
           })
-      .column3__pagination-template
-        +heading({typetag: 3, text: 'pagination', classmodify: 'pagination-template__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +pagination-template()
-      .column3__bullet-list
-        +heading({typetag: 3, text: 'bullet list', classmodify: 'bullet-list__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
-        +bullet-list({
-          arrayItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-        })
     
     section.container__bottom-row
       .column4__comments

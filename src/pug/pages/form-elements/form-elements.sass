@@ -1,11 +1,9 @@
-// colors-type
 .ui-kit__container
   padding: 0 150px
 
   display: grid
   grid-template-columns: 1fr 1fr 1fr
   grid-template-rows: 1fr 1fr 1fr
-
 
   .container__column1
     grid-column-start: 1
@@ -19,6 +17,9 @@
 
   .column1__exp-checkbox
     margin-top: 20px
+
+    &--top
+      margin-top: 40px
 
   .container__column2
     grid-column-start: 2
@@ -35,30 +36,29 @@
     grid-column-end: 4
     grid-row-start: 3
     grid-row-end: 4
+    margin-top: 136px
 
-    margin-top: 174px
 
-
-.column2__radio-buttons
+.column2__radio-buttons-container
   margin-top: 40px
 
-.column2__toggle-buttons
+.column2__toggle-buttons-container
   margin-top: 40px
 
-.column2__like-button
+.column2__like-button-container
   margin-top: 44px
 
-.column2__rate-buttons
+.column2__rate-buttons-container
   margin-top: 40px
 
-.column2__rich-checkbox-buttons
+.column2__rich-checkbox-buttons-container
   margin-top: 40px
 
+  &--top
+    margin-top: 84px
 
 
-// column 3
 .container__column3
-
   .column3__range-slider
     padding-bottom: 40px
 
@@ -73,5 +73,14 @@
       flex-direction: column
       align-items: flex-start
 
-    .buttons_container > button
-      margin-bottom: 30px
+      & > .buttons__wrapper
+        margin-bottom: 30px
+
+  .column3__bullet-list-container--top
+    margin-top: 100px
+
+.column4__info-img-wrapper
+  display: flex
+  flex-direction: column
+  .info-img-wrapper__content
+    margin-bottom: 40px
