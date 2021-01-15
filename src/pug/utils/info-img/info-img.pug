@@ -1,11 +1,7 @@
-mixin info-img({blockname, nameimg, colorimg, sizeimg, maintitle, descrip} = {})
-  div(class=`${blockname}__info-img info-img info-img--margin-top`)
-    .info-img__icon
-      +material-icons({
-        type: nameimg,
-        color: colorimg,
-        size: sizeimg
-      })
+mixin info-img({blockname, nameimg, maintitle, descrip} = {})
+  div(class=`${blockname}__info-img info-img`)
+    .info-img__img-wrapper
+      img.info-img__icon(src=`./img/${nameimg}.svg`)
     .info-img__info
       .info__maintitle= maintitle
       .info__descrip= descrip

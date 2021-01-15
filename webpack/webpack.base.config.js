@@ -128,6 +128,10 @@ module.exports = {
           to: 'img'
         },
         {
+          from: `${PATHS.src}/pug/utils/info-img/img`,
+          to: 'img'
+        },
+        {
           from: `${PATHS.src}/fonts`,
           to: `${PATHS.public}fonts`
         },

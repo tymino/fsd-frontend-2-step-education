@@ -4,13 +4,14 @@ include ../../toggle/toggle
 
 
 mixin signin()
-  .signin__container
-    +heading({
-      typetag: 2,
-      text: 'Войти',
-      color: '100',
-      weight: 700
-    })
+  form(action="").signin__container
+    .signin__header
+      +heading({
+        typetag: 2,
+        text: 'Войти',
+        color: '100',
+        weight: 700
+      })
     .signin__textinput
       +textinput({
         type: 'email',
@@ -35,11 +36,12 @@ mixin signin()
         icon: true
       })
     .signin__info-signin
-      +heading({
-        typetag: 3,
-        text: 'Уже есть аккаунт на Toxin',
-        classmodify: 'info-signin__title'
-      })
+      .info-signin__header
+        +heading({
+          typetag: 3,
+          text: 'Уже есть аккаунт на Toxin',
+          classmodify: 'info-signin__title'
+        })
       .info-signin__button
         +buttons({
           type: 'button',

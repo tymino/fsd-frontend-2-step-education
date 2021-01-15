@@ -6,7 +6,7 @@ include ./info-room-cost/info-room-cost
 
 
 mixin deal()
-  .deal__container
+  form(action="").deal__container
     .deal__info-room
       +info-room({
         number: '888',

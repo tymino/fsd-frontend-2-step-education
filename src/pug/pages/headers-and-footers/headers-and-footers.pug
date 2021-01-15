@@ -11,10 +11,11 @@ block variables
   - var pageDescription = 'Headers and Footers. Task 2';
 
 block content
-  .ui-kit__logo-wrapper
-    +logoimg()
   .headers-footers__container
-    section.container__header-logout
-      include ../../includes/header/header.pug
-    section.container__footer
-      include ../../includes/footer/footer.pug
+    .headers-footers__logo-wrapper
+      +logoimg()
+    .headers-footers__wrapper
+      section.container__header-logout
+        include ../../includes/header/header.pug
+      section.container__footer
+        include ../../includes/footer/footer.pug

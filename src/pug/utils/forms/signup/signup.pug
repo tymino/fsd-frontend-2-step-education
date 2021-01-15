@@ -4,13 +4,14 @@ include ../../toggle/toggle
 
 
 mixin signup()
-  .signup__container
-    +heading({
-      typetag: 2,
-      text: 'Регистрация аккаунта',
-      color: '100',
-      weight: 700
-    })
+  form(action="").signup__container
+    .signup__header
+      +heading({
+        typetag: 2,
+        text: 'Регистрация аккаунта',
+        color: '100',
+        weight: 700
+      })
     .signup__textinput
       +textinput({
         type: 'text',
@@ -63,11 +64,12 @@ mixin signup()
         icon: true
       })
     .signup__info-signup
-      +heading({
-        typetag: 3,
-        text: 'Уже есть аккаунт на Toxin',
-        classmodify: 'info-signup__title'
-      })
+      .info-signup__heading
+        +heading({
+          typetag: 3,
+          text: 'Уже есть аккаунт на Toxin',
+          classmodify: 'info-signup__title'
+        })
       .info-signup__button
         +buttons({
           type: 'button',

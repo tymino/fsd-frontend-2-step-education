@@ -34,6 +34,7 @@ export default class Dropdown {
   lisenerMenuItems() {
     this.dropMenu.addEventListener('click', (e) => {
       if (e.target.classList.contains('selectcount__btn-minus')) {
+        e.preventDefault();
         const count = e.target.parentNode.querySelector('.selectcount__count');
         let localNumber = parseInt(count.textContent);
         if( localNumber <= 0) {
@@ -45,6 +46,7 @@ export default class Dropdown {
           this.setInputText(e.target.parentNode.parentNode.firstChild.textContent, localNumber);
         }
       } else if (e.target.classList.contains('selectcount__btn-plus')) {
+        e.preventDefault();
         const count = e.target.parentNode.querySelector('.selectcount__count');
         let localNumber = parseInt(count.textContent);
         if( localNumber >= 30) {
@@ -60,7 +62,8 @@ export default class Dropdown {
   }
 
   lisenerButtons() {
-    this.btnReset.addEventListener('click', () => {
+    this.btnReset.addEventListener('click', e => {
+      e.preventDefault();
       this.input.value = '';
       this.input.style.color = 'rgba(31, 32, 65, 0.25)';
 
@@ -69,7 +72,8 @@ export default class Dropdown {
       this.dropMenuItems[2].querySelector('.selectcount__count').textContent = '0';
     });
 
-    this.btnApply.addEventListener('click', () => {
+    this.btnApply.addEventListener('click', e => {
+      e.preventDefault();
       this.dropMenu.classList.toggle('dropdown__drop-menu--open');
     });
   }
