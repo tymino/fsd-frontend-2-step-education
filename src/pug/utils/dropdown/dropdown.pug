@@ -1,0 +1,25 @@
+include ../heading/heading
+include ./selectcount/selectcount
+
+mixin dropdown({type = 'text', name, placeholder, istitle = false, texttitle} = {})
+  .column1__dropdown.dropdown.dropdown--margin-top
+    if istitle
+      h3.dropdown__title= `${texttitle}`
+    .dropdown__input-wrapper
+      input(
+        disabled
+        class='dropdown__input'
+        type=type,
+        name=name,
+        placeholder=placeholder
+      )
+      .dropdown__dropmenu-wrapper
+        div(class=`dropdown__arrow-down`)
+          +material-icons({
+            type: 'keyboard_arrow_down',
+          })
+        div(class=`dropdown__drop-menu`)
+          +selectcount({blockname: 'drop-menu', name: name[0]})
+          +selectcount({blockname: 'drop-menu', name: name[1]})
+          +selectcount({blockname: 'drop-menu', name: name[2]})
+          +selectcount({blockname: 'drop-menu', isBtn: true, visibleReset: ''})

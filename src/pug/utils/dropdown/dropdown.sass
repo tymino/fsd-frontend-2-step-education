@@ -1,0 +1,64 @@
+.column1__dropdown
+.dropdown
+
+  &--margin-top
+    margin-top: 20px
+
+  &__title
+    font-family: $mainfont
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+    color: $darkshade100
+
+  &__input-wrapper
+    position: relative
+
+  &__input
+    width: 100%
+    height: 44px
+    background: #FFFFFF
+    border: 1px solid $darkshade25
+    box-sizing: border-box
+    padding: 15px
+
+    font-family: $mainfont
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 18px
+    border-radius: 4px
+    color: $darkshade25
+
+    &:hover
+      border: 1px solid rgba(31, 32, 65, 0.5)
+      color: $darkshade75
+    &:focus
+      outline: none
+      border: 1px solid $darkshade50
+      color: $darkshade75
+
+  &__arrow-down
+    display: flex
+    justify-content: cetner
+    padding: 10px 10px
+
+    position: absolute
+    top: 0px
+    right: 0px
+    color: $darkshade50
+    cursor: pointer
+
+  &__drop-menu
+    position: absolute
+    display: none
+    z-index: 100
+    width: 100%
+    background: #FFFFFF
+    border: 1px solid $darkshade25
+    box-sizing: border-box
+
+    &--open
+      display: block

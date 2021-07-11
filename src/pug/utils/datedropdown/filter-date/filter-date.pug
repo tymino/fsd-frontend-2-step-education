@@ -1,0 +1,17 @@
+include ../../material-icons/material-icons
+include ../text-field/text-field
+include ../date-text-field/date-text-field
+include ../date-picker-calendar/date-picker-calendar
+
+
+mixin filter-date({ inputFieldType = 'single', firstHeader = 'date Dropdown', secondHeader = 'date Dropdown', } = {})
+  .filter-date.js-filter-date
+    case inputFieldType
+      when 'single'
+        .filter-date__input
+          +date-text-field({ header: firstHeader, type: 'entire', placeholder: 'ДД.МЕС - ДД.МЕС', width: 'wide', })
+      when 'range'
+        .filter-date__inputs
+          +date-text-field({ header: firstHeader, type: 'start', placeholder: 'ДД.ММ.ГГГГ', })
+          +date-text-field({ header: secondHeader, type: 'end', placeholder: 'ДД.ММ.ГГГГ', })
+    +date-picker-calendar()

@@ -1,0 +1,19 @@
+mixin buttons({ type='button', text='click me', infotype='primary', icon=false } = {})
+  - let infoTypeClass = ''
+
+  case infotype
+    when 'primary'
+      - infoTypeClass = 'buttons--infotype-primary'
+    when 'secondary'
+      - infoTypeClass = 'buttons--infotype-secondary'
+    when 'link'
+      - infoTypeClass = 'buttons--infotype-link'
+    when 'form'
+      - infoTypeClass = 'buttons--infotype-link'
+
+  if icon
+    button.buttons.buttons--infotype-form(class=`${infoTypeClass}` type=type)=text
+      .buttons__icon
+        +material-icons({type: 'arrow_forward'})
+  else
+    button.buttons(class=`${infoTypeClass}` type=type)=text

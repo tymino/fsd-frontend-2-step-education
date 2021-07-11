@@ -1,0 +1,41 @@
+extends ../../layout/ui-kit
+
+include ../../utils/forms/room-selection/room-selection
+include ../../utils/logotype/logotype
+include ../../utils/buttons/buttons
+
+include ./components/left-column/left-column
+include ./components/right-column/right-column
+
+
+block variables
+  - let pageTitle = 'Search room';
+  - let pageDescription = 'Search room. Task 2';
+  -
+    var rooms = [
+      { number: '888', luxury: true, cost: '9990', reviewcount: '145', rate: 3 },
+      { number: '840', luxury: false, cost: '9900', reviewcount: '65', rate: 1 },
+      { number: '980', luxury: true, cost: '8500', reviewcount: '35', rate: 2 },
+      { number: '856', luxury: false, cost: '7300', reviewcount: '19', rate: 4 },
+      { number: '740', luxury: false, cost: '6000', reviewcount: '44', rate: 5 },
+      { number: '982', luxury: false, cost: '5800', reviewcount: '56', rate: 5 },
+      { number: '678', luxury: false, cost: '5500', reviewcount: '45', rate: 4 },
+      { number: '450', luxury: false, cost: '5300', reviewcount: '39', rate: 5 },
+      { number: '350', luxury: false, cost: '5000', reviewcount: '77', rate: 5 },
+      { number: '666', luxury: false, cost: '5000', reviewcount: '25', rate: 3 },
+      { number: '444', luxury: false, cost: '5000', reviewcount: '15', rate: 1 },
+      { number: '352', luxury: false, cost: '5000', reviewcount: '55', rate: 4 },
+    ]
+
+
+block content
+  .search-room__container
+    section.search-room__header
+      include ../../includes/header/header.pug
+    section.search-room__body
+      .search-room__body-left-column-wrapper
+        +left-column()
+      .search-room__body-right-column-wrapper
+        +right-column({ rooms })
+    section.search-room__footer
+      include ../../includes/footer/footer.pug

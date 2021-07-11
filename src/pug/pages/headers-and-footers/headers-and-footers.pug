@@ -1,0 +1,21 @@
+extends ../../layout/ui-kit
+
+include ../../utils/logo-ui-kit/logo-ui-kit
+include ../../utils/logotype/logotype
+
+include ../../utils/buttons/buttons
+
+
+block variables
+  - var pageTitle = 'Headers and Footers';
+  - var pageDescription = 'Headers and Footers. Task 2';
+
+block content
+  .headers-footers__container
+    .headers-footers__logo-wrapper
+      +logoimg()
+    .headers-footers__wrapper
+      section.container__header-logout
+        include ../../includes/header/header.pug
+      section.container__footer
+        include ../../includes/footer/footer.pug

@@ -1,0 +1,16 @@
+include ../../heading/heading
+
+mixin selectcount({blockname, name, isBtn, visibleReset=''} = {})
+  -value = 0
+
+  if isBtn
+    .selectcount__btn-container
+      button(class=`selectcount__btn-reset ${visibleReset}`) Очистить
+      button(class=`selectcount__btn-apply`) Применить
+  else
+    div(class=`${blockname}__selectcount`).selectcount
+      .selectcount__title= name
+      .selectcount__wrapper
+        button(class= `selectcount__btn selectcount__btn-minus`) -
+        .selectcount__count=value
+        button(class= `selectcount__btn selectcount__btn-plus`) +

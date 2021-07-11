@@ -1,0 +1,167 @@
+.room-details-page__container
+    .room-details-page__header
+      
+    .room-details-page__body
+      .room-details-page__body-image-wrapper
+        display: flex
+
+        .room-details-page__image-main
+          height: auto
+          flex-grow: 3
+
+        .room-details-page__image-right-wrapper
+          display: flex
+          flex-direction: column
+          flex-grow: 1
+
+          .room-details-page__image
+            height: auto
+          
+    .room-details-page__footer
+
+
+
+.st0
+  transform: rotate(-90deg)
+
+
+.room-details-page__body-information-wrapper
+  display: flex
+  justify-content: space-between
+  margin-left: 140px
+  margin-right: 140px
+  margin-top: 70px
+
+  .room-details-page__body-information-container
+    display: flex
+    flex-direction: column
+    max-width: 710px
+    
+    .body-information-container__info-room
+      display: flex
+      justify-content: space-between
+
+      .info-room__wrapper-info-img-title
+        font-style: normal
+        font-weight: bold
+        font-size: 19px
+        color: #1F2041
+        
+
+        .info-room__info-img
+          border-bottom: 1px solid rgba(31, 32, 65, 0.1)
+          padding-bottom: 16px
+          margin-top: 22px
+
+          &:last-child
+            border: none
+        
+      .info-room__wrapper-graph
+        display: flex
+        flex-direction: column
+
+        .wrapper-graph__title
+          font-style: normal
+          font-weight: bold
+          font-size: 19px
+          color: #1F2041
+          margin-left: 4px
+          margin-bottom: 16px
+
+        .wrapper-graph__container
+          display: flex
+          align-items: flex-end
+
+          .wrapper-graph__graph
+            height: 120px
+            width: 120px
+            position: relative
+
+            .wrapper-graph__graph-votes-wrapper
+              display: flex
+              flex-direction: column
+              align-items: center
+              position: absolute
+              top: 34px
+              left: 30px
+              .graph-votes-wrapper__number
+                font-style: normal
+                font-weight: bold
+                font-size: 24px
+                line-height: 30px
+                color: #BC9CFF
+              .graph-votes-wrapper__text
+                font-style: normal
+                font-weight: bold
+                font-size: 12px
+                line-height: 15px
+                text-transform: uppercase
+                color: #BC9CFF
+            
+          .wrapper-graph__info
+            padding-bottom: 2px
+
+            .wrapper-graph__info-wrap
+              display: flex
+              align-items: center
+              margin-left: 30px
+
+              .info-wrap__color
+                width: 10px
+                height: 10px
+                border-radius: 50%
+                margin-right: 6px
+
+                &--orange
+                  background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+                &--green
+                  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+                &--purple
+                  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+                &--lightblack
+                  background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
+
+              .info-wrap__text
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 24px
+                color: $darkshade75
+
+    .body-information-container__comments-room
+      margin-top: 20px
+      margin-bottom: 30px
+      .comments-room__title
+        font-style: normal
+        font-weight: bold
+        font-size: 19px
+        line-height: 24px
+        color: #1F2041
+      .comments-room__comments
+        margin-top: 24px
+
+    .body-information-container__sub-info
+      display: flex
+      justify-content: space-between
+      width: 710px
+      .sub-info__wrapper
+        display: flex
+        flex-direction: column
+        max-width: 300px
+        .sub-info__wrapper-title
+          font-style: normal
+          font-weight: bold
+          font-size: 19px
+          line-height: 24px
+          color: #1F2041
+          margin-bottom: 20px
+
+        .sub-info__wrapper-text
+          font-style: normal
+          font-weight: normal
+          font-size: 14px
+          line-height: 24px
+          color: $darkshade75
+          
+  .room-details-page__body-information-form
+    margin-left: 40px

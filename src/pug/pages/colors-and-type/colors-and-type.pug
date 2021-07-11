@@ -1,0 +1,62 @@
+extends ../../layout/ui-kit
+
+
+include ../../utils/color/color
+include ../../utils/logo-ui-kit/logo-ui-kit
+include ../../utils/heading/heading
+
+
+block variables
+  - var pageTitle = 'Colors and Type';
+  - var pageDescription = 'Colors and Type. Task 2';
+
+block content
+  .ui-kit__logo-wrapper
+    +logoimg()
+  .ui-kit__container
+    section.container__colors
+      .colors__item
+        +color({ namecolor: 'Dark Shade 100%', hexcolor: '#1F2041', value: 'darkshade100' })
+      .colors__item
+        +color({ namecolor: 'Dark Shade 75%', hexcolor: '#1F2041', value: 'darkshade75' })
+      .colors__item
+        +color({ namecolor: 'Dark Shade 50%', hexcolor: '#1F2041', value: 'darkshade50' })
+      .colors__item
+        +color({ namecolor: 'Dark Shade 25%', hexcolor: '#1F2041', value: 'darkshade25' })
+      .colors__item
+        +color({ namecolor: 'Dark Shade 5%', hexcolor: '#1F2041', value: 'darkshade5' })
+      .colors__item
+        +color({ namecolor: 'Purple', hexcolor: '#1F2041', value: 'purple' })
+      .colors__item
+        +color({ namecolor: 'Green', hexcolor: '#1F2041', value: 'green' })
+
+    section.container__heading
+      .heading__item
+        .heading__item-title
+          +heading({typetag: 1, text: 'H1', color: '25', weight: 400})
+        .heading__item-description
+          +heading({typetag: 1, text: 'This one is the sub-section or widget title', color: '100', weight: 700})
+      .heading__item
+        .heading__item-title
+          +heading({typetag: 2, text: 'H2', color: '25', weight: 400})
+        .heading__item-description
+          +heading({typetag: 2, text: 'This one is the sub-section or widget title', color: '100', weight: 700})
+      .heading__item
+        .heading__item-title
+          +heading({typetag: 3, text: 'H3', color: '25', weight: 400})
+        .heading__item-description
+          +heading({typetag: 3, text: 'This one is the sub-section or widget title', color: '100', weight: 700})
+      .heading__item
+        .heading__item-title
+          +heading({typetag: 0, text: 'Body', color: '25', weight: 400})
+        .heading__item-description
+          +heading({typetag: 0, text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', color: '75', weight: 400})
+      //- .heading-item
+      //-   +heading({typetag: 2, text: 'H2', classmodify: 'heading-item__label--first-row modf__font-family--open-sans modf__text--h2 modf__color--darkshade25'})
+      //-   +heading({typetag: 2, text: 'Next one is the item title inside widgets', classmodify: 'heading-item__label modf__font-family--quicksand modf__font-weight--bold modf__color--darkshade100 modf__text--h2'})
+      //- .heading-item
+      //-   +heading({typetag: 3, text: 'H3', classmodify: 'heading-item__label--first-row modf__font-family--open-sans modf__text--h3 modf__color--darkshade25'})
+      //-   +heading({typetag: 3, text: 'This is a label or CTA text', classmodify: 'heading-item__label modf__font-family--open-sans modf__font-weight--bold modf__color--darkshade100 modf__text--h3'})
+      //- .heading-item
+      //-   +heading({typetag: -1, text: 'Body', classmodify: 'heading-item__label--first-row modf__font-family--open-sans modf__text--body modf__color--darkshade25'})
+      //-   +heading({typetag: -1, text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', classmodify: 'heading-item__label modf__font-family--open-sans modf__font-weight--normal modf__color--darkshade75 modf__text--body'})

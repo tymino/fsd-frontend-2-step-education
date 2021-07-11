@@ -1,0 +1,193 @@
+extends ../../layout/ui-kit
+
+include ../../utils/logo-ui-kit/logo-ui-kit
+include ../../utils/textinput/textinput
+include ../../utils/dropdown/dropdown
+include ../../utils/subscription/subscription
+include ../../utils/checkbox/checkbox
+include ../../utils/exp-checkbox/exp-checkbox
+include ../../utils/info-img/info-img
+include ../../utils/radio-buttons/radio-buttons
+include ../../utils/toggle/toggle
+include ../../utils/rate-buttons/rate-buttons
+include ../../utils/like-button/like-button
+include ../../utils/rich-checkbox-button/rich-checkbox-button
+include ../../utils/bullet-list/bullet-list
+include ../../utils/buttons/buttons
+include ../../utils/range-slider/range-slider
+include ../../utils/pagination-template/pagination-template
+include ../../utils/comments/comments
+include ../../utils/datedropdown/filter-date/filter-date
+
+
+block variables
+  - var pageTitle = 'Form Elements';
+  - var pageDescription = 'Form Elements. Task 2';
+
+block content
+  .ui-kit__logo-wrapper
+    .logo-wrapper__container
+      +logoimg()
+  .ui-kit__container
+    section.container__column1
+      .column1__textinput
+        +textinput({
+          type: 'email',
+          name: 'email',
+          placeholder: 'Email',
+          istitle: true,
+          texttitle: 'Text Field',
+          margintop: ''
+        })
+      .column1__dropdown
+        +dropdown({
+          type: 'guess',
+          name: 'text',
+          placeholder: 'Сколько гостей',
+          istitle: true,
+          texttitle: 'Dropdown',
+          name: ['взрослые', 'дети', 'младенцы']
+        })
+      .column1__textinput
+        +textinput({
+          type: 'date',
+          name: 'date',
+          placeholder: 'дд.мм.гггг',
+          istitle: true,
+          texttitle: 'masked text field',
+          margintop: 'text-input--margin-top'
+        })
+      .column1__filter-date
+        +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
+      .column1__filter-date
+        +filter-date({ firstHeader: 'filter date dropdown', })
+      .column1__subscription
+        +subscription({
+          type: 'text',
+          name: 'subscription',
+          placeholder: 'Email',
+          istitle: true,
+          texttitle: 'subscription text field'
+        })
+      .column1__dropdown--width266
+        +dropdown({
+          type: 'bed',
+          name: 'text',
+          placeholder: 'Сколько спален',
+          istitle: true,
+          texttitle: 'Dropdown',
+          name: ['спальни', 'кровани', 'ванные']
+        })
+      .column1__exp-checkbox.column1__exp-checkbox--top
+        +exp-checkbox({blockname: 'column1__exp-checkbox', arrayItems: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+
+      .column4__info-img-wrapper
+        .info-img-wrapper__content
+          +info-img({
+            blockname: 'column1',
+            nameimg: 'tag_faces',
+            colorimg: 'purple-gradient',
+            sizeimg: 'large',
+            maintitle: 'Комфорт',
+            descrip: 'Шумопоглощающие стены'
+          })
+        .info-img-wrapper__content
+          +info-img({
+            blockname: 'column1',
+            nameimg: 'location_city',
+            colorimg: 'purple-gradient',
+            sizeimg: 'large',
+            maintitle: 'Удобство',
+            descrip: 'Окно в каждой из спален'
+          })
+    section.container__column2
+      .column2__checkbox-buttons-container
+        .column2__heading
+          +heading({typetag: 3, text: 'Checkbox Buttons', color: '100', weight: 700})
+        .column2__checkbox
+          +checkbox({arrayItems: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+      .column2__radio-buttons-container
+        .column2__heading
+          +heading({typetag: 3, text: 'Radio Buttons', color: '100', weight: 700})
+        .column2__radio-buttons
+          +radio-buttons({arrayItems: ['Мужчина', 'Женщина']})
+      .column2__toggle-buttons-container
+        .column2__heading.heading--marginb
+          +heading({typetag: 3, text: 'toggle', color: '100', weight: 700})
+        .column2__toggle-buttons
+          +toggle({ labelname: 'Получать спецпредложения', idname: 'one' })
+      .column2__like-button-container
+        .column2__heading.heading--marginb
+          +heading({typetag: 3, text: 'like button', color: '100', weight: 700})
+        .column2__like-button
+          +like-button()
+      .column2__rate-buttons-container
+        .column2__heading.heading--marginb
+          +heading({typetag: 3, text: 'rate button', color: '100', weight: 700})
+        .column2__rate-buttons
+          +rate-buttons({isDisabled: false, rate: '2'})
+      .column2__rich-checkbox-buttons-container.column2__rich-checkbox-buttons-container--top
+        .column2__heading
+          +heading({typetag: 3, text: 'Rich Checkbox Buttons', color: '100', weight: 700})
+        .column2__rich-checkbox-buttons
+          +rich-checkbox-button({
+            arrayItems: [
+              ['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'],
+              ['Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.']
+            ]
+          })
+    section.container__column3
+      .column3__range-slider
+        +range-slider({id: 'range-slider-2', title: 'Range Slider'})
+      .column3__buttons
+        .buttons__heading.heading--marginb
+          +heading({typetag: 3, text: 'buttons', color: '100', weight: 700})
+        .buttons_container
+          .buttons__wrapper
+            +buttons({
+            type: 'button',
+            text: 'click me',
+            infotype: 'primary',
+            icon: false
+            })
+          .buttons__wrapper
+            +buttons({
+              type: 'button',
+              text: 'click me',
+              infotype: 'secondary',
+              icon: false
+            })
+          .buttons__wrapper
+            +buttons({
+              type: 'button',
+              text: 'click me',
+              infotype: 'link',
+              icon: false
+            })
+          .buttons__wrapper
+            +buttons({
+              type: 'submit',
+              text: 'перейти к оплате',
+              infotype: 'primary',
+              icon: true
+            })
+      .column3__pagination-template-container
+        .column3__heading.heading--marginb
+          +heading({typetag: 3, text: 'pagination', color: '100', weight: 700})
+        .column3__pagination-template
+          +pagination-template()
+      .column3__bullet-list-container.column3__bullet-list-container--top
+        .column3__heading.heading--marginb
+          +heading({typetag: 3, text: 'bullet list', color: '100', weight: 700})
+        .column3__bullet-list
+          +bullet-list({
+            arrayItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+          })
+    
+    section.container__bottom-row
+      .column4__comments
+        +comments({
+          name: 'Мурад Сарафанов',
+          days: '5 дней назад',
+          body: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        })

@@ -1,0 +1,19 @@
+include ../heading/heading
+
+mixin textinput({type = 'text', name, placeholder, istitle = false, texttitle, margintop} = {})
+  div(class=`column1__text-input text-input ${margintop}`)
+    if istitle
+      +heading({typetag: 3, text: texttitle, classmodify: 'text-input__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'})
+      input(
+        class=`text-input__input js-text-input__input-${type} modf__font-family--open-sans modf__font-weight--normal`
+        type=type,
+        name=name,
+        placeholder=placeholder
+      )
+    else
+      input(
+        class=`text-input__input js-text-input__input-${type} modf__font-family--open-sans modf__font-weight--normal`
+        type=type,
+        name=name,
+        placeholder=placeholder
+      )

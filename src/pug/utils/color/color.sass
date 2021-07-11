@@ -1,0 +1,39 @@
+.colors-item
+  display: flex
+  padding-bottom: 20px
+
+  &__cell
+    width: 70px
+    height: 70px
+    border-radius: $borderRadius
+
+    &--darkshade100
+      background: $darkshade100
+    &--darkshade75
+      background: $darkshade75
+    &--darkshade50
+      background: $darkshade50
+    &--darkshade25
+      background: $darkshade25
+    &--darkshade5
+      background: $darkshade5
+    &--purple
+      background: $purple
+    &--green
+      background: $green
+
+  &__info
+    display: flex
+    flex-direction: column
+    padding-left: 30px
+    height: 70px
+    align-items: flex-start
+    justify-content: space-around
+
+    &-namecolor
+      padding-top: 10px
+      font-weight: 700
+    &-hexcolor
+      padding-bottom: 10px
+
+      text-transform: uppercase

@@ -1,0 +1,19 @@
+include ../../rate-buttons/rate-buttons
+include ./slider/slider
+
+mixin room({number='350', luxury=false, cost='5000', reviewcount='0', rate}={})
+  .room__container
+    .room__wrapper-room-select
+      +slider({ number })
+
+    .room__info-room
+      +info-room({
+        number: number,
+        luxury: luxury,
+        cost: cost
+      })
+    .room__decorate-line
+    .room__wrapper-review
+      +rate-buttons({ rate })
+      .room__review-count= `${reviewcount} Отзывов`
+

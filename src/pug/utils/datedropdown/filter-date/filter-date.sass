@@ -1,0 +1,30 @@
+@import '../date-picker-calendar/date-picker-calendar'
+@import '../date-text-field/date-text-field'
+@import '../text-field/text-field'
+
+.filter-date
+  position: static
+  max-width: 320px
+  width: 100%
+  cursor: pointer
+
+  &__inputs
+    display: flex
+    justify-content: space-between
+
+  &__input
+    max-width: 266px
+    color: $darkshade75
+
+  &__keyboard-arrow
+    position: absolute
+    right: 0
+    top: 0
+    height: 44px
+    width: 44px
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $darkshade50
+    z-index: 1
+    pointer-events: none

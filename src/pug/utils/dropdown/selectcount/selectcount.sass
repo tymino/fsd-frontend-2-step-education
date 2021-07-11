@@ -1,0 +1,77 @@
+.selectcount
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 4px 10px
+
+  &__btn-container
+    display: flex
+    justify-content: space-between
+    padding: 10px
+
+  &__btn-reset
+    border: none
+    background: none
+    outline: none
+    color: $darkshade50
+    text-transform: uppercase
+    font-family: $mainfont
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    cursor: pointer
+
+  &__btn-apply
+    border: none
+    background: none
+    outline: none
+    color: $purple
+    text-transform: uppercase
+    font-family: $mainfont
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    cursor: pointer
+
+  &__title
+    font-family: $mainfont
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+    color: $darkshade100
+
+  &__wrapper
+    display: flex
+    align-items: center
+
+  &__count
+    padding: 0 10px
+    width: 8px
+
+    font-family: $mainfont
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+    color: $darkshade100
+    text-align: center
+
+  &__btn
+    height: 30px
+    width: 30px
+    border-radius: 50%
+    background: none
+    border: 1px solid $darkshade25
+    box-shadow: none
+    cursor: pointer
+
+    &:focus
+      outline: none
+
+  &__btn--visibility
+    visibility: hidden

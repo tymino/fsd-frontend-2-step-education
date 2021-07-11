@@ -1,0 +1,61 @@
+.header-container__nav-menu
+  // width: 448px
+  // margin: 0 auto 30px
+
+.nav-menu__list, .submenu
+  list-style: none 
+  margin: 0
+  padding: 0
+
+.nav-menu__list > li 
+  display: inline-block
+  position: relative
+
+.nav-menu__list > li:last-child 
+  margin-right: 0
+
+.nav-menu__link, .submenu__link
+  display: flex
+  align-items: center
+  padding: 0px 10px
+  text-decoration: none
+  outline: none
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 17px
+  color: $darkshade50
+
+.material-icons
+  padding-top: 2px
+
+.submenu 
+  position: absolute
+  top: 100%
+  left: 0
+  width: 100%
+  z-index: 10
+
+.nav-menu__list
+
+.nav-menu__link 
+  color: $darkshade50
+
+.header-container__nav-menu .submenu 
+  display: none
+  background: white
+
+.nav-menu__item:hover .submenu 
+  display: block
+
+
+.submenu__link
+  padding: 6px 0px
+
+  border-bottom: 1px solid rgba(255,255,255,.3)
+  color: $darkshade50
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+
+.nav-menu__link--active
+  font-weight: bold
+  color: $darkshade75

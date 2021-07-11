@@ -1,0 +1,6 @@
+mixin color ({namecolor, hexcolor, value, img} = {})
+  .colors-item
+    div(class= `colors-item__cell colors-item__cell--${value}`)
+    .colors-item__info
+      .colors-item__info-namecolor= namecolor
+      .colors-item__info-hexcolor= hexcolor

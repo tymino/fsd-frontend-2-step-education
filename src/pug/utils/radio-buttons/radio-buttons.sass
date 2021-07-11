@@ -1,0 +1,44 @@
+.radio-buttons__container
+  margin-top: 16px
+  display: flex
+  justify-content: space-between
+  max-width: 220px
+
+.radio-buttons__item
+  list-style-type: none
+
+.radio-buttons__input
+	display: none
+
+.radio-buttons__label
+	cursor: pointer
+	position: relative
+	padding-left: 30px
+	margin-right: 0
+	line-height: 24px
+	user-select: none
+
+.radio-buttons__label
+  &:before
+    content: ""
+    display: inline-block
+    width: 20px
+    height: 20px
+    position: absolute
+    left: 0
+    background: url('./../pug/utils/radio-buttons/img/circle.svg')
+    background-repeat: no-repeat
+    background-position: center center
+
+.radio-buttons__input
+  &:checked + label
+    &:before
+      background: url('./../pug/utils/radio-buttons/img/dot-radio.svg')
+      background-repeat: no-repeat
+      background-position: center center
+
+.radio-buttons__label
+  &:hover
+    color: $purple
+    &:before
+      filter: brightness(110%)

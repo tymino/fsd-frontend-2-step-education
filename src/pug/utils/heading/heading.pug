@@ -1,0 +1,12 @@
+mixin heading({typetag, text, color, weight} = {})
+  -const customClass = `heading heading__color--darkshade${color} heading__weight--${weight}`
+
+  case typetag
+    when 1
+      h1(class=`${customClass}`)= text
+    when 2
+      h2(class=`${customClass}`)= text
+    when 3
+      h3(class=`${customClass}`)= text
+    default
+      p(class=`${customClass}`)= text

@@ -1,0 +1,22 @@
+include ../../../../utils/forms/room/room
+include ../../../../utils/forms/deal/deal
+include ../../../../utils/pagination-template/pagination-template
+
+
+mixin right-column({rooms}={})
+
+  .search-room__body-right-column
+    .body-right-column__title Номера, которые мы для вас подобрали
+
+    .body-right-column__room-cells
+      each room in rooms
+        .room-cell__item-block
+          +room({
+            number: room.number,
+            luxury: room.luxury,
+            cost: room.cost,
+            reviewcount: room.reviewcount,
+            rate: room.rate
+          })
+    .body-right-column__pages
+      +pagination-template()

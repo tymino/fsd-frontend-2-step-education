@@ -1,0 +1,53 @@
+.text-field
+  display: inline-block
+  width: 100%
+  max-width: 320px
+  position: relative
+  padding-left: 15px
+  padding-top: 0
+  padding-bottom: 0
+  background: #FFFFFF
+  border: 1px solid $darkshade25
+  border-radius: 4px
+  box-sizing: border-box
+  font-family: $mainfont
+  font-size: 14px
+  line-height: 42px
+  color: $darkshade25
+  text-overflow: ellipsis
+
+  &:focus, 
+  &:hover
+    border: 1px solid $darkshade50
+    color: $darkshade75
+    outline: none
+
+  &::placeholder
+    color: $darkshade25
+
+  &_masked
+    &:focus, 
+    &:hover
+      border: 1px solid $darkshade50
+      color: $darkshade75
+      outline: none
+  
+    &::placeholder
+      color: $darkshade25
+
+  &_theme
+    &_dark
+      color: $darkshade75
+    
+      &::placeholder
+        color: $darkshade75
+    
+      &:focus, 
+      &:hover
+        border: 1px solid $darkshade25
+
+  &_clickable
+    cursor: pointer
+
+  &_with-padding-on-right
+    padding-right: 38px

@@ -1,0 +1,19 @@
+mixin slider({number}={})
+  .slider
+    .slider__item
+      img.slider__image(src=`img/room${number}.jpg` alt="Первый слайд")
+
+    .slider__item
+      img.slider__image(src=`img/room${number}.jpg` alt="Второй слайд")
+
+    .slider__item
+      img.slider__image(src=`img/room${number}.jpg` alt="Третий слайд")
+
+    a.slider__prev &#10094;
+    a.slider__next &#10095;
+
+    .slider__dots
+      span.slider__dots-item(data-index=1)
+      span.slider__dots-item(data-index=2)
+      span.slider__dots-item(data-index=3)
+

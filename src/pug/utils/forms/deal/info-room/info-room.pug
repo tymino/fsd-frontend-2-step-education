@@ -1,0 +1,16 @@
+mixin info-room({number='001', luxury=false, cost='5000'}={})
+  - let luxuryText = ''
+
+  if luxury
+    - luxuryText = 'люкс'
+  else
+    - luxuryText = ''
+
+  
+  .info-room__container
+    .info-room__wrapper-number
+      .info-room__numer-symbol №
+      .info-room__number= number
+      .info-room__luxury= luxuryText
+    .info-room__wrapper-cost= `${cost}₽ в сутки`
+

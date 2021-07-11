@@ -1,0 +1,7 @@
+mixin rate-buttons({rate}={})
+  .rate-buttons__container
+    each i in [5, 4, 3, 2, 1]
+      if i <= rate
+        div.rate-buttons__input(class=`rate-buttons__input--active` type='radio') star
+      else
+        div.rate-buttons__input(type='radio') star

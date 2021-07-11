@@ -1,0 +1,15 @@
+mixin comments({avatar='avatar', name, days, body}={})
+  .comments__container
+    .comments__wrapper-info
+      img.comments__avatar(
+        src=`./img/${avatar}.png`,
+        alt="avatar"
+        height='48'
+        width='48'
+      )
+      .comments__like-btn
+        +like-button()
+    .comments__wrapper-text
+      .comments__name= name
+      .comments__days= days
+      .comments__body= body

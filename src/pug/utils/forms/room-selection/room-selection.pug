@@ -1,0 +1,35 @@
+include ../../datedropdown/filter-date/filter-date
+include ../../dropdown/dropdown
+include ../../buttons/buttons
+
+
+mixin room-selection()
+  form(action="").room-selection__container
+    .room-selection__header
+      +heading({
+        typetag: 2,
+        text: 'Найдём номера под ваши пожелания',
+        classmodify: 'room-selection__title modf__font-family--open-sans modf__font-weight--bold modf__text--h3 modf__color--darkshade100'
+      })
+    .room-selection__filter-date
+      +filter-date({
+        inputFieldType: 'range',
+        firstHeader: 'прибытие',
+        secondHeader: 'выезд'
+      })
+    .room-selection__dropdown
+      +dropdown({
+        type: 'guess',
+        name: 'text',
+        placeholder: 'Сколько гостей',
+        istitle: true,
+        texttitle: 'гости',
+        name: ['взрослые', 'дети', 'младенцы']
+      })
+    .room-selection__buttons
+      +buttons({
+        type: 'submit',
+        text: 'подобрать номер',
+        infotype: 'primary',
+        icon: true
+      })

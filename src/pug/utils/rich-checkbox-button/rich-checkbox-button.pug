@@ -1,0 +1,9 @@
+mixin rich-checkbox-button({arrayItems} = {})
+  ul.checkbox-list.rich-checkbox-button
+  each val, index in arrayItems
+    li(class=`checkbox-list__item rich-checkbox-button__item`)
+      input(type="checkbox" name=val class=`checkbox-list__input js-rich-checkbox-button__input-${index}`)
+      label(for=val class=`checkbox-list__label js-rich-checkbox-button__label-${index}`)
+        .rich-checkbox-button__wrapper
+          .rich-checkbox-button__label-title= val[0]
+          .rich-checkbox-button__label-info= val[1]
